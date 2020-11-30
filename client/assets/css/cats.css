@@ -1,0 +1,341 @@
+  
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+body {
+    background: #f1cef5;
+}
+.missTake {
+    --head-color: darksalmon;
+    --width-head: 200px;
+    --height-head: 170px;
+    --hair-color: #f5f1a9;
+    --hair2-color: #123256;
+    --width-hair: 170px;
+    --height-hair: 80px;
+    --eye-color: white;
+    --width-eye: 50px;
+    --height-eye: 50px;
+    --pupils-color: indianred;
+    --width-pupils: 40px;
+    --height-pupils: 40px;
+    --iris-color: white;
+    --iris-width: 12px;
+    --iris-height: 12px;
+    --nose-height: 25px;
+    --nose-width: 25px;
+    --nose-color: #ccc2cc;
+    --mouth-height: 15px;
+    --mouth-width: 30px;
+    --mouth-color: #eb0e0e;
+    --flower-color: pink;
+    --flower-width: 60px;
+    --flower-height: 18px;
+    --arms-color: darksalmon;
+    --arms-height: 200px;
+    --arms-width: 200px;
+    --dress-color: #a9f5e6;
+    --dress-height: 300px;
+    --dress-width: 150px;
+  }
+.head {
+    background-color: var(--head-color);
+    width: var(--width-head);
+    height: var(--height-head);
+    border-radius: 50%;
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    top: 50px;
+}
+.eyes {
+    position: relative;
+    top: 30px;
+    display: flex;
+}
+.eye {
+    background-color: var(--eye-color) ;
+    border-radius: 50%;
+    width: var(--width-eye);
+    height: var(--height-eye);
+    margin: 25px;
+    position: relative;
+}
+.pupils {
+    background-color: var(--pupils-color);
+    width: var(--width-pupils);
+    height: var(--height-pupils);
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+.iris {
+    background-color: var(--iris-color);
+    width: var(--iris-width);
+    height: var(--iris-height);
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 14px;
+}
+.little-iris{
+    background-color: var(--iris-color);
+    width: calc(var(--iris-width) * .5) ;
+    height: calc(var(--iris-height) * .5);
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+}
+.nose {
+    background-color: var(--nose-color);
+    width: var(--nose-width);
+    height: var(--nose-height);
+    border-radius: 0 90px 90px 90px;
+    position: absolute;
+    transform: translate(90px, 100px) rotate(225deg);
+}
+.mouth {
+    color: var(--mouth-color);
+    position: absolute;
+    width: var(--mouth-width);
+    height: var(--mouth-height);
+    border-radius: 50%;
+    box-shadow: 71px 80px 0 0 currentColor;
+    top: 55px;
+    left: 18px;
+}
+.hair {
+    width: var(--width-hair);
+    height: var(--height-hair);
+    transform: translate(25px, -6px);
+    position: absolute;
+    z-index: 2;
+  }
+  .hair div:nth-child(1) {
+    border-radius: 30% 70% 0% 50% / 45% 100% 0% 50%;
+    background-color: var(--hair-color);
+    background: radial-gradient(
+      circle at bottom left,
+      var(--hair2-color) 0%,
+      var(--hair-color) 60%,
+      #1d528a 100%
+    );
+    width: 100px;
+    height: 60px;
+    box-shadow: inset -10px -21px 20px var(--hair-color),
+      8px 21px 0 -14px rgba(0, 0, 0, 0.075);
+    transform: rotate(70deg);
+    position: absolute;
+    right: -65px;
+    bottom: -38px;
+  }
+  .hair div:nth-child(1)::before {
+    content: "";
+    display: block;
+    width: 66px;
+    height: 44px;
+    transform: rotate(174deg) translate(-35px, -15px);
+    border-radius: 81% / 100%;
+    box-shadow: 3px 20px 0 0 var(--hair-color);
+    position: absolute;
+    bottom: -46px;
+    right: 7px;
+    z-index: -1;
+    transform: rotate(-143deg);
+  }
+  .hair div:nth-child(2) {
+    border-radius: 70% 55% 10% 71% / 90% 78% 0% 50%;
+    background-color: var(--hair-color);
+    background: radial-gradient(
+      circle at top left,
+      var(--hair-color) 50%,
+      var(--hair2-color) 100%
+    );
+    width: 115px;
+    height: 62px;
+    box-shadow: inset -10px -21px 20px var(--hair-color);
+    transform: rotate(-6deg);
+    position: absolute;
+    z-index: -2;
+    right: 50px;
+    bottom: 48px;
+  }
+  .hair div:nth-child(2)::before {
+    content: "";
+    display: block;
+    width: 58px;
+    height: 47px;
+    position: absolute;
+    transform: rotate(174deg) translate(-35px, -15px);
+    border-radius: 80% / 100%;
+    box-shadow: 10px 16px 0 0 var(--hair-color);
+    top: 47px;
+  }
+  .hair div:nth-child(3) {
+    border-radius: 47% 75% 69% 24% / 41% 48% 60% 50%;
+    background-color: var(--hair-color);
+    background: radial-gradient(
+      ellipse at top left,
+      var(--hair-color) 30%,
+      var(--hair2-color) 100%
+    );
+    width: 51px;
+    height: 70px;
+    box-shadow: inset -10px -21px 20px var(--hair-color);
+    position: absolute;
+    left: -17px;
+    bottom: 36px;
+    z-index: -2;
+    transform: rotate(-129deg);
+    transform-origin: center;
+  }
+  .hair div:nth-child(4) {
+    border-radius: 70% 30% 61% 39% / 60% 26% 74% 40%;
+    background-color: var(--hair-color);
+    width: 57px;
+    height: 70px;
+    box-shadow: inset -10px -21px 20px var(--hair-color);
+    position: absolute;
+    left: -30px;
+    bottom: 5px;
+    z-index: -9;
+    transform: rotate(12deg);
+    transform-origin: center;
+  }
+  .hair div:nth-child(5) {
+    border-radius: 30% 70% 0% 50% / 45% 100% 0% 50%;
+    background-color: var(--hair-color);
+    background: radial-gradient(
+      circle at bottom left,
+      var(--hair2-color) 0%,
+      var(--hair-color) 60%,
+      #1d528a 100%
+    );
+    width: 100px;
+    height: 60px;
+    box-shadow: inset -10px -21px 20px var(--hair-color),
+      8px 21px 0 -14px rgba(0, 0, 0, 0.075);
+    transform: rotate(28deg);
+    position: absolute;
+    right: -30px;
+    bottom: 29px;
+  }
+  .hair div:nth-child(6) {
+    border-radius: 95% 0% 90% 50% / 95% 0% 90% 45%;
+    background-color: var(--hair-color);
+    background: radial-gradient(
+      circle at bottom left,
+      var(--hair2-color) 0%,
+      var(--hair-color) 60%,
+      #1d528a 100%
+    );
+    width: 100px;
+    height: 60px;
+    box-shadow: inset -10px -21px 20px var(--hair-color),
+      8px 21px 0 -14px rgba(0, 0, 0, 0.075);
+    transform: rotate(97deg);
+    position: absolute;
+    right: 148px;
+    bottom: -57px;
+  }
+.flower {
+    width: var(--flower-width);
+    height: var(--flower-height);
+    background-color: var(--flower-color);
+    border-radius: 50px;
+    position: absolute;
+    top: 58px;
+    left: -55px;
+}
+.flower::before {
+    content:"";
+    display: block;
+    position: absolute;
+    width: var(--flower-width);
+    height: var(--flower-height);
+    background-color: var(--flower-color);
+    border-radius: 50px;
+    transform: rotate(60deg);
+}
+.flower::after {
+    content:"";
+    display: block;
+    position: absolute;
+    width: var(--flower-width);
+    height: var(--flower-height);
+    background-color: var(--flower-color);
+    border-radius: 50px;
+    transform: rotate(-60deg);
+}
+.arms {
+    position: absolute;
+    width: var(--arms-width);
+    height: var(--arms-height);
+    background-color: var(--arms-color);
+    top: 219px;
+    left: 50px;
+    border-radius: 50% 50% 15% 15%;
+}
+.dress {
+    width: var(--dress-width);
+    height: var(--dress-height);
+    background-color: var(--dress-color);
+    position: absolute;
+    top: 20px;
+    left: 28px;
+    border-radius: 50% 50% 90% 90%;   
+}
+.diamond {
+    position: absolute;
+    top:10%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);   
+}
+.diamond div:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 0px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #ca93f5 #8c4bbf transparent;
+}
+.diamond div:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #dbbaf5 #ca93f5 #8c4bbf #dfc4f5;
+}
+.diamond div:nth-child(3) {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #dbbaf5 #ca93f5 #8c4bbf #dfc4f5;
+}
+.diamond div:nth-child(4) {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #dbbaf5 #ca93f5 #8c4bbf #dfc4f5;
+}
