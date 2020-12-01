@@ -67,41 +67,62 @@ function eyeVariation(num) {
         case 4:
             normalEyes()  // Reset
             $('#eyeName').html('Duuuh')  // Set badge to "Duuh"
-            eyesType3
+            eyesType3()
             break 
     }
 }
-
 function decorationVariation(num) {
-    $('#dnadecoration').html(num)
+
+    $('#dnabracelet').html(num)
     switch (num) {
         case 1:
-            $('#decorationName').html('Basic')
             normaldecoration()
+            $('#decorationName').html('Wide') // Set badge to Wide
             break
+        case 2:
+            normaldecoration() // Reset
+            $('#decorationName').html('Fine') // Set badge to Fine
+            decorationType1()
+            break   
+        case 3:
+            normaldecoration() // Reset
+            $('#decorationName').html('Fine Yellow') // Set badge to FineYellow
+            decorationType2()
+            break
+
     }
 }
-
 function normalEyes() {
       $('.eyes').find('span').css('border', 'none')
 }
 
 function eyesType1() {
-      $('.eyes').find('span').css('border-top', '15px solid')
+      $('.eyes').find('span').css({'border-top': '15px solid', 'transform': 'rotate(-5deg)'})
 }
 
 function eyesType2() {
-      $('.eyes').find('span').css('transform', 'rotate(15deg)')
+      $('.eyes').find('span').css({'border-bottom': '17px solid', 'transform': 'rotate(-125deg)'})
 }
 
 function eyesType3() {
-      $('.eyes').find('span').css({'border-bottom': '17px solid', 'transform': 'rotate(-15deg)'})
+      $('.eyes').find('span').css({'border-bottom': '15px solid', 'transform': 'rotate(-10deg)'})
 }
 
 function normaldecoration() {
     //Remove all style from other decorations
     //In this way we can also use normalDecoration() to reset the decoration style
-    $('.cat__head-dots').css({ "transform": "rotate(0deg)", "height": "48px", "width": "14px", "top": "1px", "border-radius": "0 0 50% 50%" })
+    $('.bracelet').css('transform', 'rotate(0deg)')
+}
+function decorationType1() {
+    $('.bracelet').css({ "transform": "rotate(0deg)", "height": "18px", "width": "200px", "top": "140px", "border-radius": "40% 40% 40% 40%" })
+}
+function decorationType2() {
+    $('.bracelet').css({ "transform": "rotate(0deg)", "height": "38px", "width": "200px", "top": "120px", "border-radius": "60% 60% 60% 60%", "background-color": "#cdcf63" })
+}
+
+/*
+    $('.bracelet').css({ "transform": "rotate(0deg)", "height": "18px", "width": "200px", "top": "140px", "border-radius": "40% 40% 40% 40%" })
+
     $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
     $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
-}
+*/

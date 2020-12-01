@@ -8,11 +8,14 @@ var defaultDNA = {
     "flowerColor" : 10,
     //Cattributes
     "eyesShape" : 1,
-    "decorationPattern" : 1,
+    "braceletShape" : 1,
+
+    /*
     "decorationMidcolor" : 13,
     "decorationSidescolor" : 13,
     "animation" :  1,
     "lastNum" :  1
+    */
     }
 
 // when page load
@@ -39,7 +42,8 @@ function getDna(){
     dna += $('#dnaeyes').html()
     dna += $('#dnaflower').html()
     dna += $('#dnashape').html()
-    dna += $('#dnadecoration').html()
+    dna += $('#dnabracelet').html()
+
     dna += $('#dnadecorationMid').html()
     dna += $('#dnadecorationSides').html()
     dna += $('#dnaanimation').html()
@@ -83,4 +87,8 @@ $('#dressColor').change(()=>{
 $('#eyeShape').change(()=>{
   var shape = parseInt($('#eyeShape').val())
   eyeVariation(shape)
+})
+$('#braceletShape').change(()=>{
+  var shape = parseInt($('#braceletShape').val())
+  decorationVariation(shape)
 })

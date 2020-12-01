@@ -43,6 +43,9 @@ body {
     --dress-color: #a9f5e6;
     --dress-height: 300px;
     --dress-width: 150px;
+    --bracelet-color: #b9bcbd;
+    --bracelet-height: 30px;
+    --bracelet-width: 200px;
   }
 .head {
     background-color: var(--head-color);
@@ -292,6 +295,15 @@ body {
     top: 20px;
     left: 28px;
     border-radius: 50% 50% 90% 90%;   
+}
+.bracelet {
+   width: var(--bracelet-width);
+   height: var(--bracelet-height);
+   background-color: var(--bracelet-color);
+   position: absolute;
+   top: 120px;
+   left: 0px;
+   border-radius: 10% 10% 10% 10%;
 }
 .diamond {
     position: absolute;
