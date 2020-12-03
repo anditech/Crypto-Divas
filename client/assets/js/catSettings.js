@@ -10,11 +10,13 @@ var defaultDNA = {
     "eyeShape" : 1,
     "braceletShape" : 1,
     "dressShape" : 1,
+    // Animation
+    "animation" :  1,
 
     /*
     "decorationMidcolor" : 13,
     "decorationSidescolor" : 13,
-    "animation" :  1,
+    
     "lastNum" :  1
     */
     }
@@ -30,9 +32,11 @@ $( document ).ready(function() {
   $('#dnaBraceletShape').html(defaultDNA.braceletShape);
   $('#dnaDressShape').html(defaultDNA.dressShape);
 
+  
+
   /*
   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
-  $('#dnaanimation').html(defaultDNA.animation)
+  
   $('#dnaspecial').html(defaultDNA.lastNum)
   */
 
@@ -49,9 +53,11 @@ function getDna(){
     dna += $('#dnaEyeShape').html()
     dna += $('#dnaBraceletShape').html()
     dna += $('#dnaDressShape').html()
+
+    dna += $('#dnaanimation').html()
     /*
     dna += $('#dnadecorationSides').html()
-    dna += $('#dnaanimation').html()
+    
     dna += $('#dnaspecial').html()
     */
     return parseInt(dna)
@@ -72,6 +78,8 @@ function renderCat(dna){
     $('#braceletShape').val(dna.braceletShape)
     dressVariation(dna.dressShape)
     $('#dressShape').val(dna.dressShape)
+    animationVariation(dna.animation)
+    $("#animation").val(dna.animation)
 
 }
 // Changing cat colors
@@ -95,16 +103,29 @@ $('#dressColor').change(()=>{
   dressColor(colors[colorVal],colorVal)
 })
 
+// Changing Shapes
+
 $('#eyeShape').change(()=>{
-  var shape = parseInt($('#eyeShape').val())
+  var shape = parseInt( $('#eyeShape').val() )
   eyeVariation(shape)
 })
 $('#braceletShape').change(()=>{
-  var shape = parseInt($('#braceletShape').val())
+  var shape = parseInt( $('#braceletShape').val() )
   decorationVariation(shape)
 })
 
 $('#dressShape').change(()=>{
-  var shape = parseInt($('#dressShape').val())
+  var shape = parseInt( $('#dressShape').val() )
   dressVariation(shape)
 })
+
+// Animations
+
+$('#animation').change(()=>{
+  var animationVal = parseInt( $('#animation').val() ) // parsInt to convert string to a integer
+  animationVariation(animationVal)
+})
+
+
+
+

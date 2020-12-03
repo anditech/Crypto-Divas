@@ -51,24 +51,24 @@ function eyeVariation(num) {
     $('#dnaEyeShape').html(num)
     switch (num) {
         case 1:
-            normalEyes()
-            $('#eyeName').html('Attentive') // Set badge to "Attentive"
-            break
+            normalEyes();
+            $('#eyeName').html('Attentive'); // Set badge to "Attentive"
+            break;
         case 2:
-            normalEyes()  // Reset
-            $('#eyeName').html('Relaxed')  // Set badge to "Relaxed"
-            eyesType1()
-            break    
+            normalEyes();  // Reset
+            $('#eyeName').html('Relaxed');  // Set badge to "Relaxed"
+            eyesType1();
+            break;   
         case 3:
-            normalEyes()  // Reset
-            $('#eyeName').html('Bitchy')  // Set badge to "Bitchy"
-            eyesType2() 
-            break   
+            normalEyes(); // Reset
+            $('#eyeName').html('Bitchy');  // Set badge to "Bitchy"
+            eyesType2(); 
+            break;   
         case 4:
-            normalEyes()  // Reset
-            $('#eyeName').html('Duuuh')  // Set badge to "Duuh"
-            eyesType3()
-            break 
+            normalEyes();  // Reset
+            $('#eyeName').html('Duuuh');  // Set badge to "Duuh"
+            eyesType3();
+            break; 
     }
 }
 // Bracelet Vairations
@@ -77,19 +77,19 @@ function decorationVariation(num) {
     $('#dnaBraceletShape').html(num)
     switch (num) {
         case 1:
-            normalDecoration()  
-            $('#decorationName').html('Wide') // Set badge to Wide          
-            break 
+            normalDecoration();  
+            $('#decorationName').html('Wide'); // Set badge to Wide          
+            break; 
         case 2:
-            normalDecoration()  // Reset
-            $('#decorationName').html('Medium') // Set badge to Fine            
-            decorationType1()
-            break   
+            normalDecoration();  // Reset
+            $('#decorationName').html('Medium'); // Set badge to Fine            
+            decorationType1();
+            break;   
         case 3:
-            normalDecoration()  // Reset
-            $('#decorationName').html('Fine') // Set badge to FineYellow             
-            decorationType2()
-            break 
+            normalDecoration();  // Reset
+            $('#decorationName').html('Fine'); // Set badge to FineYellow             
+            decorationType2();
+            break; 
     }
 }
 // Dress Variations
@@ -98,29 +98,61 @@ function dressVariation(num) {
     $('#dnaDressShape').html(num)
     switch (num) {
         case 1: 
-             normalDress()
-            $('#dressName').html('Round') // Set badge to round
-            break
+            normalDress();
+            $('#dressName').html('Free'); // Set badge to round
+            break;
         case 2:
-            normalDress()  // Reset
-            $('#dressName').html('Shoulderssss') // Set badge to shoulders
-            dressType1()
-            break
+            normalDress();  // Reset
+            $('#dressName').html('Neck'); // Set badge to shoulders
+            dressType1();
+            break;
+        case 3:
+            normalDress();  // Reset
+            $('#dressName').html('Shoulder'); // Set badge to shoulders
+            dressType2();
+            break;   
     }
+}
+// Animation
+function animationVariation(num) {
+
+    $('#dnaanimation').html(num)
+    switch (num) {
+        case 1:
+            animationType1();
+            break;
+        case 2:
+            animationType2();
+            break;   
+    }
+}
+function animationType1() {
+    // Reset animation here
+    resetAnimation();
+    $("#theHead").addClass("movingHead");
+}
+function animationType2() {
+    resetAnimation();
+    $("#myDiamond").addClass("shinyDiamond");
+    // add diamond animation
+    // add hair animation
+}
+function resetAnimation() {
+    $("#theHead").removeClass("movingHead");
+    $("myDiamond").removeClass("shinyDiamond");
+
+    // Add animation classes created 
 }
 // Functions Eye Variations
 function normalEyes() {
       $('.eyes').find('span').css('border', 'none');
 }
-
 function eyesType1() {
       $('.eyes').find('span').css({'border-top': '15px solid', 'transform': 'rotate(-5deg)'});
 }
-
 function eyesType2() {
       $('.eyes').find('span').css({'border-bottom': '17px solid', 'transform': 'rotate(-125deg)'});
 }
-
 function eyesType3() {
       $('.eyes').find('span').css({'border-bottom': '15px solid', 'transform': 'rotate(-10deg)'});
 }
@@ -138,11 +170,15 @@ function decorationType2() {
 
 // Functions Dress variations
 function normalDress() {
-    $('.dress').css;
+    $('.dress').css({"border": "none", "top": "20px", "left": "28px","border-radius": "50% 50% 90% 90%"});
 }
 function dressType1() {
-    $('dress').css({"top": "2px", "left": "28px","border-radius": "120% 120% 90% 90%"});
+    $('.dress').css({"border": "none", "top": "2px", "left": "28px","border-radius": "120% 120% 90% 90%"});
 }
+function dressType2() {
+    $('.dress').css({"border": "none", "top": "2px", "left": "28px","border-radius": "185% 115% 90% 0%"});
+}
+
 
 
 /*
