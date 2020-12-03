@@ -45,10 +45,10 @@ function dressColor(color, code) {
 //###################################################
 
 // Variation functions for range-bars 
-
+// Eyes variation
 function eyeVariation(num) {
 
-    $('#dnashape').html(num)
+    $('#dnaEyeShape').html(num)
     switch (num) {
         case 1:
             normalEyes()
@@ -71,58 +71,81 @@ function eyeVariation(num) {
             break 
     }
 }
+// Bracelet Vairations
 function decorationVariation(num) {
 
-    $('#dnabracelet').html(num)
+    $('#dnaBraceletShape').html(num)
     switch (num) {
         case 1:
-            normaldecoration()
-            $('#decorationName').html('Wide') // Set badge to Wide
-            break
+            normalDecoration()  
+            $('#decorationName').html('Wide') // Set badge to Wide          
+            break 
         case 2:
-            normaldecoration() // Reset
-            $('#decorationName').html('Fine') // Set badge to Fine
+            normalDecoration()  // Reset
+            $('#decorationName').html('Medium') // Set badge to Fine            
             decorationType1()
             break   
         case 3:
-            normaldecoration() // Reset
-            $('#decorationName').html('Fine Yellow') // Set badge to FineYellow
+            normalDecoration()  // Reset
+            $('#decorationName').html('Fine') // Set badge to FineYellow             
             decorationType2()
-            break
-
+            break 
     }
 }
+// Dress Variations
+function dressVariation(num) {
+
+    $('#dnaDressShape').html(num)
+    switch (num) {
+        case 1: 
+             normalDress()
+            $('#dressName').html('Round') // Set badge to round
+            break
+        case 2:
+            normalDress()  // Reset
+            $('#dressName').html('Shoulderssss') // Set badge to shoulders
+            dressType1()
+            break
+    }
+}
+// Functions Eye Variations
 function normalEyes() {
-      $('.eyes').find('span').css('border', 'none')
+      $('.eyes').find('span').css('border', 'none');
 }
 
 function eyesType1() {
-      $('.eyes').find('span').css({'border-top': '15px solid', 'transform': 'rotate(-5deg)'})
+      $('.eyes').find('span').css({'border-top': '15px solid', 'transform': 'rotate(-5deg)'});
 }
 
 function eyesType2() {
-      $('.eyes').find('span').css({'border-bottom': '17px solid', 'transform': 'rotate(-125deg)'})
+      $('.eyes').find('span').css({'border-bottom': '17px solid', 'transform': 'rotate(-125deg)'});
 }
 
 function eyesType3() {
-      $('.eyes').find('span').css({'border-bottom': '15px solid', 'transform': 'rotate(-10deg)'})
+      $('.eyes').find('span').css({'border-bottom': '15px solid', 'transform': 'rotate(-10deg)'});
 }
 
-function normaldecoration() {
-    //Remove all style from other decorations
-    //In this way we can also use normalDecoration() to reset the decoration style
-    $('.bracelet').css('transform', 'rotate(0deg)')
+// Functions Bracelet variations 
+function normalDecoration() {
+    $('.arms').find('span').css({"transform": "rotate(0deg)", "height": "30px", "width": "200px", "top": "120px", "border-radius": "10% 10% 10% 10%" });
 }
 function decorationType1() {
-    $('.bracelet').css({ "transform": "rotate(0deg)", "height": "18px", "width": "200px", "top": "140px", "border-radius": "40% 40% 40% 40%" })
+    $('.arms').find('span').css({ "transform": "rotate(0deg)", "height": "38px", "width": "200px", "top": "135px", "border-radius": "40% 40% 40% 40%" });
 }
 function decorationType2() {
-    $('.bracelet').css({ "transform": "rotate(0deg)", "height": "38px", "width": "200px", "top": "120px", "border-radius": "60% 60% 60% 60%", "background-color": "#cdcf63" })
+    $('.arms').find('span').css({ "transform": "rotate(0deg)", "height": "18px", "width": "200px", "top": "140px", "border-radius": "60% 60% 60% 60%" });
 }
 
-/*
-    $('.bracelet').css({ "transform": "rotate(0deg)", "height": "18px", "width": "200px", "top": "140px", "border-radius": "40% 40% 40% 40%" })
+// Functions Dress variations
+function normalDress() {
+    $('.dress').css;
+}
+function dressType1() {
+    $('dress').css({"top": "2px", "left": "28px","border-radius": "120% 120% 90% 90%"});
+}
 
+
+/*
     $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
     $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
 */

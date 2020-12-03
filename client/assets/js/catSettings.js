@@ -7,8 +7,9 @@ var defaultDNA = {
     "eyesColor" : 79,
     "flowerColor" : 10,
     //Cattributes
-    "eyesShape" : 1,
+    "eyeShape" : 1,
     "braceletShape" : 1,
+    "dressShape" : 1,
 
     /*
     "decorationMidcolor" : 13,
@@ -20,17 +21,20 @@ var defaultDNA = {
 
 // when page load
 $( document ).ready(function() {
-  $('#dnabody').html(defaultDNA.headColor);
-  $('#dnamouth').html(defaultDNA.mouthColor);
+  $('#dnabody').html(defaultDNA.headcolor);
+  $('#dnadress').html(defaultDNA.dressColor);
+  $('#dnaflower').html(defaultDNA.flowerColor);
   $('#dnaeyes').html(defaultDNA.eyesColor);
-  $('#dnaears').html(defaultDNA.earsColor);
     
-  $('#dnashape').html(defaultDNA.eyesShape)
-  $('#dnadecoration').html(defaultDNA.decorationPattern)
-  $('#dnadecorationMid').html(defaultDNA.decorationMidcolor)
+  $('#dnaEyeShape').html(defaultDNA.eyeShape);
+  $('#dnaBraceletShape').html(defaultDNA.braceletShape);
+  $('#dnaDressShape').html(defaultDNA.dressShape);
+
+  /*
   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
   $('#dnaanimation').html(defaultDNA.animation)
   $('#dnaspecial').html(defaultDNA.lastNum)
+  */
 
   renderCat(defaultDNA)
 });
@@ -41,14 +45,15 @@ function getDna(){
     dna += $('#dnadress').html()
     dna += $('#dnaeyes').html()
     dna += $('#dnaflower').html()
-    dna += $('#dnashape').html()
-    dna += $('#dnabracelet').html()
 
-    dna += $('#dnadecorationMid').html()
+    dna += $('#dnaEyeShape').html()
+    dna += $('#dnaBraceletShape').html()
+    dna += $('#dnaDressShape').html()
+    /*
     dna += $('#dnadecorationSides').html()
     dna += $('#dnaanimation').html()
     dna += $('#dnaspecial').html()
-
+    */
     return parseInt(dna)
 }
 
@@ -61,8 +66,14 @@ function renderCat(dna){
     $('#flowerColor').val(dna.flowerColor)
     dressColor(colors[dna.dressColor],dna.dressColor)
     $('#dressColor').val(dna.dressColor)
-}
+    eyeVariation(dna.eyeShape)
+    $('#eyeShape').val(dna.eyeShape)
+    decorationVariation(dna.braceletShape)
+    $('#braceletShape').val(dna.braceletShape)
+    dressVariation(dna.dressShape)
+    $('#dressShape').val(dna.dressShape)
 
+}
 // Changing cat colors
 $('#bodycolor').change(()=>{
     var colorVal = $('#bodycolor').val()
@@ -91,4 +102,9 @@ $('#eyeShape').change(()=>{
 $('#braceletShape').change(()=>{
   var shape = parseInt($('#braceletShape').val())
   decorationVariation(shape)
+})
+
+$('#dressShape').change(()=>{
+  var shape = parseInt($('#dressShape').val())
+  dressVariation(shape)
 })

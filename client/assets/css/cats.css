@@ -43,9 +43,12 @@ body {
     --dress-color: #a9f5e6;
     --dress-height: 300px;
     --dress-width: 150px;
-    --bracelet-color: #b9bcbd;
+    --bracelet-color: #ffb780;
     --bracelet-height: 30px;
     --bracelet-width: 200px;
+    --belt-color: ;
+    --belt-height: ;
+    --belt-width: ;
   }
 .head {
     background-color: var(--head-color);
@@ -350,4 +353,13 @@ body {
     border-width: 10px;
     border-style: solid;
     border-color: #dbbaf5 #ca93f5 #8c4bbf #dfc4f5;
+}
+.belt {
+  width: var(--bracelet-width);
+  height: var(--bracelet-height);
+  background-color: var(--bracelet-color);
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  border-radius: 10% 10% 10% 10%;
 }
