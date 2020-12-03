@@ -38,3 +38,11 @@
         border-color: #dbbaf5 #ca93f5 #8c4bbf #dfc4f5;
     }
 }
+
+.shinyHair {
+    animation : shine2 2s infinite;
+}
+
+@keyframes shine2 {
+    
+}

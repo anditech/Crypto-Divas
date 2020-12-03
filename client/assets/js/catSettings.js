@@ -31,8 +31,9 @@ $( document ).ready(function() {
   $('#dnaEyeShape').html(defaultDNA.eyeShape);
   $('#dnaBraceletShape').html(defaultDNA.braceletShape);
   $('#dnaDressShape').html(defaultDNA.dressShape);
-
+  $('#dnaanimation').html(defaultDNA.animation);
   
+
 
   /*
   $('#dnadecorationSides').html(defaultDNA.decorationSidescolor)
@@ -53,7 +54,6 @@ function getDna(){
     dna += $('#dnaEyeShape').html()
     dna += $('#dnaBraceletShape').html()
     dna += $('#dnaDressShape').html()
-
     dna += $('#dnaanimation').html()
     /*
     dna += $('#dnadecorationSides').html()

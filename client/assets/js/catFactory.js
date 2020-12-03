@@ -120,10 +120,16 @@ function animationVariation(num) {
     switch (num) {
         case 1:
             animationType1();
+            $('#animationName').html('Moving Head'); // Set badge to Moving head
             break;
         case 2:
             animationType2();
-            break;   
+            $('#animationName').html('Shiny Diamond'); // Set badge to Shiny diamond
+            break;
+        case 3:
+            animationType3
+            $('#animationName').html('Shiny Hair'); // Set badge to Shiny hair
+         
     }
 }
 function animationType1() {
@@ -137,9 +143,15 @@ function animationType2() {
     // add diamond animation
     // add hair animation
 }
+function animationType3() {
+    resetAnimation();
+    $("#myHair").addClass("shinyHair");
+
+}
 function resetAnimation() {
     $("#theHead").removeClass("movingHead");
-    $("myDiamond").removeClass("shinyDiamond");
+    $("#myDiamond").removeClass("shinyDiamond");
+    $("#myHair").removeClass("shinyHair");
 
     // Add animation classes created 
 }
