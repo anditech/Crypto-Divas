@@ -139,7 +139,7 @@ function animationType1() {
 }
 function animationType2() {
     resetAnimation();
-    $("#myDiamond").addClass("shinyDiamond");
+    $(".d1").addClass("shinyDiamond");
     // add diamond animation
     // add hair animation
 }
@@ -150,7 +150,7 @@ function animationType3() {
 }
 function resetAnimation() {
     $("#theHead").removeClass("movingHead");
-    $("#myDiamond").removeClass("shinyDiamond");
+    $(".d1").removeClass("shinyDiamond");
     $("#myHair").removeClass("shinyHair");
 
     // Add animation classes created 
