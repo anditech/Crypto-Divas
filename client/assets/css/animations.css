@@ -7,10 +7,11 @@
         transform: rotate(0deg);
     }
     30% {
-        transform: rotate(5deg);
+        transform: rotate(8deg);
+        
     }
     60% {
-        transform: rotate(-5de);
+        transform: rotate(-28de);
     }
     100% {
         transform: rotate(0deg);
@@ -26,13 +27,13 @@
         border-color: #dbbaf5 #ca93f5 #8c4bbf #dfc4f5;
     }
     25% {
-        border-color: #dfc4f5 #dbbaf5 #ca93f5 #8c4bbf ;
+        border-color: #dfc4f5 #dbbaf5 #ca93f5 #8c4bbf;
     }
     50% {
-        border-color: #8c4bbf #dfc4f5 #dbbaf5 #ca93f5 ;
+        border-color: #8c4bbf #dfc4f5 #dbbaf5 #ca93f5;
     }
     75% {
-        border-color: #ca93f5 #8c4bbf #dfc4f5 #dbbaf5 ;
+        border-color: #ca93f5 #8c4bbf #dfc4f5 #dbbaf5;
     }
     100% {
         border-color: #dbbaf5 #ca93f5 #8c4bbf #dfc4f5;
@@ -44,5 +45,97 @@
 }
 
 @keyframes shine2 {
+    0% {
+        background-color: #f5f1a9;
+        background: radial-gradient(
+        circle at bottom left,
+        #1d528a 0%,
+        #f5f1a9 60%,
+        #1d528a 100%);
+    
+    }
+    25% {
+        background-color: #f5f1a9;
+        background: radial-gradient(
+        circle at bottom left,
+        #f5f1a9 0%,
+        #1d528a 60%,
+        #1d528a 100%);
+        
+    }
+    50% {
+        background-color: #f5f1a9;
+        background: radial-gradient(
+        circle at bottom left,
+        #1d528a 0%,
+        #f5f1a9 60%,
+        #1d528a 100%);
+        
+    }
+    75% {
+        background-color: #f5f1a9;
+        background: radial-gradient(
+        circle at bottom left,
+        #f5f1a9 0%,
+        #1d528a 60%,
+        #1d528a 100%);
+        
+    }
+    100% {
+        background-color: #f5f1a9;
+        background: radial-gradient(
+        circle at bottom left,
+        #1d528a 0%,
+        #f5f1a9 60%,
+        #1d528a 100%);
+    }
+        
+
+}
+
+/*
+
+{
+    background-color: #f5f1a9;
+    background: radial-gradient(
+    circle at bottom left,
+    #1d528a 0%,
+    #f5f1a9 60%,
+    #1d528a 100%);
+
+}
+25% {
+    background-color: #f5f1a9;
+    background: radial-gradient(
+    circle at bottom left,
+    #f5f1a9 0%,
+    #1d528a 60%,
+    #1d528a 100%);
     
 }
+50% {
+    background-color: #f5f1a9;
+    background: radial-gradient(
+    circle at bottom left,
+    #1d528a 0%,
+    #f5f1a9 60%,
+    #1d528a 100%);
+    
+}
+75% {
+    background-color: #f5f1a9;
+    background: radial-gradient(
+    circle at bottom left,
+    #f5f1a9 0%,
+    #1d528a 60%,
+    #1d528a 100%);
+    
+}
+100% {
+    background-color: #f5f1a9;
+    background: radial-gradient(
+    circle at bottom left,
+    #1d528a 0%,
+    #f5f1a9 60%,
+    #1d528a 100%);
+} */
