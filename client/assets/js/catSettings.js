@@ -3,7 +3,7 @@ var colors = Object.values(allColors())
 
 var defaultDNA = {
     "headcolor" : 19,
-    "dressColor" : 13,
+    "dressColor" : 70,
     "eyesColor" : 79,
     "flowerColor" : 10,
     //Cattributes
