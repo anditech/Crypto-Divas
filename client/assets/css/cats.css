@@ -106,14 +106,14 @@ body {
     transform: translate(90px, 100px) rotate(225deg);
 }
 .mouth {
-    color: var(--mouth-color);
+    background-color: var(--mouth-color);
     position: absolute;
     width: var(--mouth-width);
     height: var(--mouth-height);
-    border-radius: 50%;
-    box-shadow: 71px 80px 0 0 currentColor;
-    top: 55px;
-    left: 18px;
+    border-radius: 190px / 67px;
+    top: 145px;
+    left: 104px;
+    transform: translate(-50%, -50%);
 }
 .hair {
     width: var(--width-hair);
