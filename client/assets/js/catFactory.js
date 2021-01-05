@@ -152,28 +152,6 @@ function fashionVariation(num) {
             break;    
     }
 }
-/*
-function dressVariation(num) {
-
-    $('#dnaDressShape').html(num)
-    switch (num) {
-        case 1: 
-            normalDress();
-            $('#dressName').html('Free'); // Set badge to Free
-            break;
-        case 2:
-            normalDress();  // Reset
-            $('#dressName').html('Neck'); // Set badge to Neck
-            dressType1();
-            break;
-        case 3:
-            normalDress();  // Reset
-            $('#dressName').html('Shoulder'); // Set badge to Shoulders
-            dressType2();
-            break;   
-    }
-}
-*/
 
 // Animation
 function animationVariation(num) {
@@ -190,8 +168,12 @@ function animationVariation(num) {
             break;
         case 3:
             animationType3();
-            $('#animationName').html('Shiny Hair'); // Set badge to Shiny hair
+            $('#animationName').html('Shiny Hair | Diamond'); // Set badge to Shiny hair
             break;
+        case 4:
+            animationType4();
+            $('#animationName').html('Dancing Queen'); // Set badge to Dancing Queen
+            break;    
          
     }
 }
@@ -203,22 +185,24 @@ function animationType1() {
 function animationType2() {
     resetAnimation();
     $(".d1").addClass("shinyDiamond");
-    // add diamond animation
-    
+    // adding diamond animation    
 }
 function animationType3() {
-  //  resetAnimation();
+    resetAnimation();
     $(".theHair").addClass("shinyHair");
-    // add hair animation
-
+    // adding hair | diamond animation
+}
+function animationType4() {
+    $("#theArms").addClass("dancingQueen");
+    // adding hair | diamond  | dancing queen animation   
 }
 function resetAnimation() {
     $("#theHead").removeClass("movingHead");
     $(".d1").removeClass("shinyDiamond");
     $(".theHair").removeClass("shinyHair");
-
-    // Add animation classes created 
+    $("#theArms").removeClass("dancingQueen");
 }
+
 // Functions Eye Variations
 function normalEyes() {
       $('.eyes').find('span').css('border', 'none');

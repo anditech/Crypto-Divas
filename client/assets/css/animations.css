@@ -90,52 +90,23 @@
         #1d528a 100%);
     }
         
-
 }
 
-/*
+.dancingQueen {
+    animation: dance 2s infinite; 
+}
 
-{
-    background-color: #f5f1a9;
-    background: radial-gradient(
-    circle at bottom left,
-    #1d528a 0%,
-    #f5f1a9 60%,
-    #1d528a 100%);
-
+@keyframes dance {
+    0% {
+        transform: skew(6deg, 0deg);
+    }
+    30% {
+        transform: skew(0deg, 1deg);
+    }
+    60% {
+        transform: skew(-6deg, -1deg);
+    }
+    100% {
+        transform: skew(6deg, 0deg);
+    }
 }
-25% {
-    background-color: #f5f1a9;
-    background: radial-gradient(
-    circle at bottom left,
-    #f5f1a9 0%,
-    #1d528a 60%,
-    #1d528a 100%);
-    
-}
-50% {
-    background-color: #f5f1a9;
-    background: radial-gradient(
-    circle at bottom left,
-    #1d528a 0%,
-    #f5f1a9 60%,
-    #1d528a 100%);
-    
-}
-75% {
-    background-color: #f5f1a9;
-    background: radial-gradient(
-    circle at bottom left,
-    #f5f1a9 0%,
-    #1d528a 60%,
-    #1d528a 100%);
-    
-}
-100% {
-    background-color: #f5f1a9;
-    background: radial-gradient(
-    circle at bottom left,
-    #1d528a 0%,
-    #f5f1a9 60%,
-    #1d528a 100%);
-} */
