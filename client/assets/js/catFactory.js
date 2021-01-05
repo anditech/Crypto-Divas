@@ -168,7 +168,7 @@ function animationVariation(num) {
             break;
         case 3:
             animationType3();
-            $('#animationName').html('Shiny Hair | Diamond'); // Set badge to Shiny hair
+            $('#animationName').html('Shiny Hair'); // Set badge to Shiny hair
             break;
         case 4:
             animationType4();
