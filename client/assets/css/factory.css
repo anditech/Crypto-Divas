@@ -5,6 +5,7 @@
     padding-left: 28px;
     padding-bottom: 48px;
     height: 98vh;
+    overflow: hidden;
 }
 .cattributes {
     padding: 25px;
@@ -16,4 +17,8 @@
     position: absolute;
     left:20px;
     bottom: 5px;
+}
+
+.cat {
+    position: absolute;
 }

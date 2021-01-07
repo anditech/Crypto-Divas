@@ -7,10 +7,12 @@ var defaultDNA = {
     "eyesColor" : 79,
     "flowerColor" : 10,
     "dressColor" : 70,
+    "flowerColor2" : 11,
     
     //Cattributes
     "eyeShape" : 1,
     "fashionShape" : 3,
+    
   
     // Animation
     "animation" : 2,
@@ -26,6 +28,7 @@ $( document ).ready(function() {
   $('#dnadress').html(defaultDNA.dressColor);  
   $('#dnaEyeShape').html(defaultDNA.eyeShape);
   $('#dnaFashionShape').html(defaultDNA.fashionShape);
+  $('#dnaFlowerColor2').html(defaultDNA.flowerColor2);
   $('#dnaanimation').html(defaultDNA.animation);
   $('#dnaspecial').html(defaultDNA.lastNum)
   
@@ -42,6 +45,7 @@ function getDna(){
     dna += $('#dnadress').html()
     dna += $('#dnaEyeShape').html()
     dna += $('#dnaFashionShape').html()
+    dna += $('#dnaFlowerColor2').html()
     dna += $('#dnaanimation').html()
     dna += $('#dnaspecial').html()
     
@@ -63,6 +67,10 @@ function renderCat(dna){
     $('#eyeShape').val(dna.eyeShape)
     fashionVariation(dna.fashionShape)
     $('#fashionShape').val(dna.fashionShape)
+
+    flowerColor2(dna.flowerColor2)
+    $('#flowerColor2').val(dna.flowerColor2)
+
     animationVariation(dna.animation)
     $('#animation').val(dna.animation)
 
@@ -93,6 +101,11 @@ $('#dressColor').change(()=>{
     dressColor(colors[colorVal],colorVal)
 })
 
+$('#flowerColor2').change(()=>{
+    var colorVal = $('#flowerColor2').val()
+    flowerColor2(colors[colorVal],colorVal)
+})
+
 // Changing Shapes
 $('#eyeShape').change(()=>{
   var shape = parseInt( $('#eyeShape').val() )
@@ -102,6 +115,7 @@ $('#fashionShape').change(()=>{
   var shape = parseInt( $('#fashionShape').val() )
   fashionVariation(shape)
 })
+
 // Animations
 $('#animation').change(()=>{
   var animationVal = parseInt( $('#animation').val() ) // parsInt to convert string to a integer

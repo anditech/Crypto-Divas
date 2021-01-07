@@ -45,6 +45,12 @@ function dressColor(color, code) {
     $('#dnadress').html(code);
 }
 
+function flowerColor2(color, code) {
+    $('.flower::before, .flower::after').css('background', '#' + color);
+    $('#flowerCode2').html('code: ' + code);
+    $('#dnaFlowerColor2').html(code);
+}
+
 
 //###################################################
 //Functions below will be used later on in the project
