@@ -68,7 +68,7 @@ function renderCat(dna){
     fashionVariation(dna.fashionShape)
     $('#fashionShape').val(dna.fashionShape)
 
-    flowerColor2(dna.flowerColor2)
+    flowerColor2(colors[dna.flowerColor2],dna.flowerColor2)
     $('#flowerColor2').val(dna.flowerColor2)
 
     animationVariation(dna.animation)

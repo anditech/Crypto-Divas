@@ -34,7 +34,8 @@ body {
     --mouth-height: 15px;
     --mouth-width: 30px;
     --mouth-color: #eb0e0e;
-    --flower-color: pink;
+    --flower-side-color: pink;
+    --flower-mid-color: cornflowerblue;
     --flower-width: 60px;
     --flower-height: 18px;
     --arms-color: darksalmon;
@@ -252,7 +253,7 @@ body {
 .flower {
     width: var(--flower-width);
     height: var(--flower-height);
-    background-color: var(--flower-color);
+    background-color: var(--flower-side-color);
     border-radius: 50px;
     position: absolute;
     top: 58px;
@@ -264,7 +265,7 @@ body {
     position: absolute;
     width: var(--flower-width);
     height: var(--flower-height);
-    background-color: var(--flower-color);
+    background-color: var(--flower-mid-color);
     border-radius: 50px;
     transform: rotate(60deg);
 }
@@ -274,7 +275,7 @@ body {
     position: absolute;
     width: var(--flower-width);
     height: var(--flower-height);
-    background-color: var(--flower-color);
+    background-color: var(--flower-mid-color);
     border-radius: 50px;
     transform: rotate(-60deg);
 }

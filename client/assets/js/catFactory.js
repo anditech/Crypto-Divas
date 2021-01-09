@@ -34,7 +34,7 @@ function eyeColor(color,code) {
 }
 
 function flowerColor(color,code) {
-    $('.flower').css('background', '#' + color);
+    $('.missTake').css('--flower-side-color', '#' + color);
     $('#flowerCode').html('code: ' + code);
     $('#dnaflower').html(code);
 }
@@ -46,7 +46,7 @@ function dressColor(color, code) {
 }
 
 function flowerColor2(color, code) {
-    $('.flower::before, .flower::after').css('background', '#' + color);
+    $('.missTake').css('--flower-mid-color', '#' + color);
     $('#flowerCode2').html('code: ' + code);
     $('#dnaFlowerColor2').html(code);
 }
