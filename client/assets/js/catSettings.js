@@ -9,12 +9,10 @@ var defaultDNA = {
     "flowerColor2" : 31,
     "dressColor" : 70,
     
-    
     //Cattributes
     "eyeShape" : 1,
     "fashionShape" : 3,
     
-  
     // Animation
     "animation" : 2,
     "lastNum" :  1,
@@ -52,6 +50,30 @@ function getDna(){
     
     return parseInt(dna)
 }
+//Function triggered by the Random Lady Button
+function randomLady() {
+  let randomDNA = {
+    "headcolor" : Math.floor(Math.random() * 89) + 10, 
+    "mouthColor": Math.floor(Math.random() * 89) + 10,
+    "eyesColor" : Math.floor(Math.random() * 89) + 10,
+    "flowerColor" : Math.floor(Math.random() * 89) + 10,
+    "flowerColor2" : Math.floor(Math.random() * (51 - 31 + 1)) + 31, // Range between 31 and 51
+    "dressColor" : Math.floor(Math.random() * 89) + 10,
+    
+    //Cattributes
+    "eyeShape" : Math.floor(Math.random() * 4) + 1,
+    "fashionShape" : Math.floor(Math.random() * 9) + 1,
+    
+    // Animation
+    "animation" : Math.floor(Math.random() * 4) + 1,
+    "lastNum" :  1,
+  }
+  renderCat(randomDNA)
+}
+//Function triggered by the Default Lady Button
+function defaultLady() {
+  renderCat(defaultDNA)
+}
 
 function renderCat(dna){
     headColor(colors[dna.headcolor],dna.headcolor)
@@ -76,6 +98,8 @@ function renderCat(dna){
     $('#animation').val(dna.animation)
 
 }
+
+
 // Changing cat colors
 $('#bodycolor').change(()=>{
     var colorVal = $('#bodycolor').val()
