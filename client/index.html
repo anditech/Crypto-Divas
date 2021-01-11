@@ -18,119 +18,118 @@
   <body>
     <div class="container p-5" style="margin-top: 12vh;margin-bottom: 10vh;">
         <div align="center">
-        <h1 class="c-white">Ladies-Factory</h1>
-        <p class="c-white">Create your custom Lady</p>
+            <h1 class="c-white">Ladies-Factory</h1>
+            <p class="c-white">Create your custom Lady</p>
         </div>
         <div class="row">
-                        <div class="col-lg-4 catBox m-2 light-b-shadow">
+            <div class="col-lg-4 catBox m-2 light-b-shadow">
 
-                            <!-- My Lady -->
-                            <div class="cat">
-                                <div class="missTake">
-                                    <div id="theHead" class="head">
-                                        <div class="hair ">
-                                            <div class="theHair"></div>
-                                            <div class="theHair"></div>
-                                            <div class="theHair"></div>
-                                            <div class="theHair"></div>
-                                            <div class="theHair"></div>
-                                            <div class="theHair"></div>
+            <!-- My Lady -->
+                <div class="lady">
+                    <div class="missTake">
+                        <div id="theHead" class="head">
+                            <div class="hair ">
+                                <div class="theHair"></div>
+                                <div class="theHair"></div>
+                                <div class="theHair"></div>
+                                <div class="theHair"></div>
+                                <div class="theHair"></div>
+                                <div class="theHair"></div>
 
-                                            <div class="flower"></div>
-                                        </div>
-                                        <div class="nose"></div>
-                                        <div class="mouth"></div>
-                                        <div class="eyes">
-                                        <div class="eye">
-                                            <span class="pupils">
-                                                <div class="eyes iris">
-                                                    <div class="iris little-iris"></div>
-                                                </div>
-                                            </span>
-                                        </div>
-                                        <div class="eye">
-                                            <span class="pupils">
-                                                <div class="eyes iris">
-                                                    <div class="iris little-iris"></div>
-                                                </div>
-                                            </span>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div class="arms" id="theArms">
-                                        <span class="bracelet"></span>
-                                        <div class="dress">
-                                            
-                                            <div class="diamond">
-                                                <div></div>
-                                                <div class="d1"></div>
-                                                <div class="d1"></div>
-                                                <div class="d1"></div>
-                                            </div>
-                                        </div>
-                                </div>
-                                </div>
+                                <div class="flower"></div>
                             </div>
-                            <!-- End of My Lady -->
-                            <br>
-                            <div class="dnaDiv" id="catDNA">
-                                <b>
-                                    DNA:
-                                    <!-- Colors -->
-                                    <span id="dnabody"></span>
-                                    <span id="dnamouth"></span>
-                                    <span id="dnaeyes"></span>
-                                    <span id="dnaflower"></span>
-                                    <span id="dnadress"></span>
-                                                              
-                                    <!-- Dragttributes -->
-                                    <span id="dnaEyeShape"></span>
-                                    <span id="dnaFashionShape"></span>
-                                    <span id="dnaFlowerColor2"></span>                                    
-                                    <span id="dnaanimation"></span>
-                                    <span id="dnaspecial"></span>
-                                </b>
+                            <div class="nose"></div>
+                            <div class="mouth"></div>
+                            <div class="eyes">
+                            <div class="eye">
+                                <span class="pupils">
+                                    <div class="eyes iris">
+                                        <div class="iris little-iris"></div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="eye">
+                                <span class="pupils">
+                                    <div class="eyes iris">
+                                        <div class="iris little-iris"></div>
+                                    </div>
+                                </span>
+                            </div>
                             </div>
                         </div>
+                        <div class="arms" id="theArms">
+                            <span class="bracelet"></span>
+                            <div class="dress">
+                                
+                                <div class="diamond">
+                                    <div></div>
+                                    <div class="d1"></div>
+                                    <div class="d1"></div>
+                                    <div class="d1"></div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- End of My Lady -->
+                <br>
+                <div class="dnaDiv" id="catDNA">
+                    <b>
+                        DNA:
+                        <!-- Colors -->
+                        <span id="dnabody"></span>
+                        <span id="dnamouth"></span>
+                        <span id="dnaeyes"></span>
+                        <span id="dnadress"></span>
+                                                    
+                        <!-- Dragttributes -->
+                        <span id="dnaEyeShape"></span>
+                        <span id="dnaFashionShape"></span>
+                        <span id="dnaflower"></span>
+                        <span id="dnaFlowerColor2"></span>                                    
+                        <span id="dnaanimation"></span>
+                        <span id="dnaspecial"></span>
+                    </b>
+                </div>
+            </div>     
 
-                    
             <!-- Buttons and Collapse -->
-
             <div class="col-lg-7 "> 
                 <p>
                     <a class="btn btn-info" data-toggle="collapse" href="#multiCollapseColors" role="button" aria-expanded="false" aria-controls="multiCollapseColors">Colors</a>
                     <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#multiCollapseDragttributes" aria-expanded="false" aria-controls="multiCollapseDragttributes">Dragttributes</button>
+                
+                <!--Buttons for Random Lady, Default Lady & Create Lady-->
+                    <button onclick="randomLady()" type="button" class="btn btn-primary">Random</button>
+                    <button onclick="defaultLady()" type="button" class="btn btn-secondary">Default</button>
+                    <button type="button" class="btn btn-success">Create</button>
                 </p>
                     
-                    <div class="row">
-                        <div class="col-lg-12 collapse multi-collapse cattributes m-2 light-b-shadow" id="multiCollapseColors"> 
+                <div class="row">
+                    <div class="col-lg-12 collapse multi-collapse cattributes m-2 light-b-shadow" id="multiCollapseColors"> 
 
-                            <div id="catColors">
-
-                                <div class="form-group">
-                                    <label for="formControlRange"><b>Head & body color</b><span class="badge badge-dark ml-2" id="headcode"></span></label>
-                                    <input type="range" min="11" max="98" class="form-control-range" id="bodycolor">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="formControlRange"><b>Mouth color</b><span class="badge badge-dark ml-2" id="mouthCode"></span></label>
-                                    <input type="range" min="10" max="98" class="form-control-range" id="mouthColor">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="formControlRange"><b>Eyes color</b><span class="badge badge-dark ml-2" id="eyeCode"></span></label>
-                                    <input type="range" min="10" max="98" class="form-control-range" id="eyeColor">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="formControlRange"><b>Dress color</b><span class="badge badge-dark ml-2" id="dressCode"></span></label>
-                                    <input type="range" min="10" max="98" class="form-control-range" id="dressColor">
-                                </div>
-
+                            <div class="form-group">
+                                <label for="formControlRange"><b>Head & body color</b><span class="badge badge-dark ml-2" id="headcode"></span></label>
+                                <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
                             </div>
 
-                        </div>
-                
+                            <div class="form-group">
+                                <label for="formControlRange"><b>Mouth color</b><span class="badge badge-dark ml-2" id="mouthCode"></span></label>
+                                <input type="range" min="10" max="98" class="form-control-range" id="mouthColor">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="formControlRange"><b>Eyes color</b><span class="badge badge-dark ml-2" id="eyeCode"></span></label>
+                                <input type="range" min="10" max="98" class="form-control-range" id="eyeColor">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="formControlRange"><b>Dress color</b><span class="badge badge-dark ml-2" id="dressCode"></span></label>
+                                <input type="range" min="10" max="98" class="form-control-range" id="dressColor">
+                            </div>
+
+                    </div>
+            
                 </div>
                 
                 <div class="row">  
@@ -147,9 +146,8 @@
                                 <label for="formControlRange"><b>Dress & Bracelet shape</b><span class="badge badge-dark ml-2" id="fashionName" ></span></label>
                                 <input type="range" min="1" max="9" class="form-control-range" id="fashionShape" >
                             </div>
-                            <br>
-
-                            <form class="form-inline">
+                            
+                            <div class="row">
                                 <div class="form-group col-lg-6">
                                     <label for="formControlRange"><b>Side Petals</b><span class="badge badge-dark ml-2" id="flowerCode"></span></label>
                                     <input type="range" min="10" max="98" class="form-control-range" id="flowerColor">
@@ -159,39 +157,26 @@
                                     <label for="formControlRange"><b>Center Petals</b><span class="badge badge-dark ml-2" id="flowerCode2" ></span></label>
                                     <input type="range" min="31" max="51" class="form-control-range" id="flowerColor2" >
                                 </div>
-                            </form>
-                            <br>
-
+                            </div>
+                            
                             <div class="form-group">
                                 <label for="formControlRange"><b>Animation</b><span class="badge badge-dark ml-2" id="animationName"></span></label>
-                                <input type="range" min="1" max="4" class="form-control-range" id="animation">
+                                <input type="range" min="1" max="5" class="form-control-range" id="animation">
                             </div>
                         </div>
-                </div>  
+                    </div>  
 
                 </div>
 
             </div>
-            <!--Buttons for Random Lady, Default Lady & Create Lady-->
-            <p>
-                <button onclick="randomLady()" type="button" class="btn btn-info">Random Lady</button>
-                <button onclick="defaultLady()" type="button" class="btn btn-info">Default Lady</button>
-                <button type="button" class="btn btn-success">Create Lady</button>
-            </p>
-            
+                
         </div>
     </div>
-  </div>
-    </div>
-        <br>
-
-        </div>
-    </div>
+    <br>
     <footer align="left">
         <p>Ivan on Tech Academy Bootcamp July 2020</p>
     </footer>
-
-  </body>
+</body>
   <script src="assets/js/colors.js"></script>
   <script src="assets/js/catSettings.js"></script>
   <script src="assets/js/catFactory.js"></script>

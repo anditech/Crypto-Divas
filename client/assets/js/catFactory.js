@@ -1,5 +1,4 @@
 
-//Random color
 function getColor() {
     var randomColor = Math.floor(Math.random() * 16777215).toString(16);
     return randomColor
@@ -14,47 +13,40 @@ function genColors(){
     return colors
 }
 
-//This function code needs to modified so that it works with Your cat code.
+
 function headColor(color,code) {
-    $('.head, .arms').css('background', '#' + color);  //This changes the color of the cat
+    $('.head, .arms').css('background', '#' + color);  //This changes the color of the lady
     $('#headcode').html('code: ' + code); //This updates text of the badge next to the slider
-    $('#dnabody').html(code); //This updates the body color part of the DNA that is displayed below the cat
+    $('#dnabody').html(code); // This updates the body color part of the DNA that is displayed below the lady
 }
 
 function mouthColor(color,code) {
     $('.mouth').css('background', '#' + color);  //This changes the color of the mouth
     $('#mouthCode').html('code: ' + code);  //This updates text of the badge next to the slider
-    $('#dnamouth').html(code);  //This updates the mouth color part of the DNA that is displayed below the cat
+    $('#dnamouth').html(code);  // This updates the mouth color part of the DNA that is displayed below the lady
 }
 
 function eyeColor(color,code) {
     $('.pupils').css('background', '#' + color);  // This changes thre color of the eyes
     $('#eyeCode').html('code: ' + code);  // This updates text of the badge next to slider
-    $('#dnaeyes').html(code);  //This updates the body color part of the DNA that is displayed below the cat 
+    $('#dnaeyes').html(code);  // This updates the body color part of the DNA that is displayed below the lady
 }
-
-function flowerColor(color,code) {
-    $('.missTake').css('--flower-side-color', '#' + color);
-    $('#flowerCode').html('code: ' + code);
-    $('#dnaflower').html(code);
-}
-
 function dressColor(color, code) {
-    $('.dress').css('background', '#' + color);
-    $('#dressCode').html('code: ' + code);
-    $('#dnadress').html(code);
+    $('.dress').css('background', '#' + color);   // This changes thre color of the dress
+    $('#dressCode').html('code: ' + code);   // This updates text of the badge next to slider
+    $('#dnadress').html(code);   // This updates the body color part of the DNA that is displayed below the lady
 }
-
+function flowerColor(color,code) {
+    $('.missTake').css('--flower-side-color', '#' + color);   // This changes thre color of the center petals
+    $('#flowerCode').html('code: ' + code);   // This updates text of the badge next to slider
+    $('#dnaflower').html(code);   // This updates the flower part of the DNA that is displayed below the lady
+}
 function flowerColor2(color, code) {
-    $('.missTake').css('--flower-mid-color', '#' + color);
-    $('#flowerCode2').html('code: ' + code);
-    $('#dnaFlowerColor2').html(code);
+    $('.missTake').css('--flower-mid-color', '#' + color);   // This changes thre color of the side petals
+    $('#flowerCode2').html('code: ' + code);   // This updates text of the badge next to slider
+    $('#dnaFlowerColor2').html(code);   // This updates the flower part of the DNA that is displayed below the lady
 }
 
-
-//###################################################
-//Functions below will be used later on in the project
-//###################################################
 
 // Variation functions for range-bars 
 // Eyes variation
@@ -161,7 +153,6 @@ function fashionVariation(num) {
 
 // Animation
 function animationVariation(num) {
-
     $('#dnaanimation').html(num)
     switch (num) {
         case 1:
@@ -179,28 +170,34 @@ function animationVariation(num) {
         case 4:
             animationType4();
             $('#animationName').html('Dancing Queen'); // Set badge to Dancing Queen
-            break;    
-         
+            break;  
+        case 5:
+            animationType5(); 
+            $('#animationName').html('Crazy Queen'); // Set badge to Crazy Queen
+            break;  
     }
 }
 function animationType1() {
-    // Reset animation here
-    resetAnimation();
+    resetAnimation();     // Resets animation 
     $("#theHead").addClass("movingHead");
 }
 function animationType2() {
-    resetAnimation();
-    $(".d1").addClass("shinyDiamond");
-    // adding diamond animation    
+    resetAnimation();     // Resets animation 
+    $(".d1").addClass("shinyDiamond");    // adding diamond animation   
 }
 function animationType3() {
     resetAnimation();
-    $(".theHair").addClass("shinyHair");
-    // adding hair | diamond animation
+    $(".theHair").addClass("shinyHair");   // adding hair animation
 }
 function animationType4() {
-    $("#theArms").addClass("dancingQueen");
-    // adding hair | diamond  | dancing queen animation   
+    resetAnimation();   // Resets animation 
+    $("#theArms").addClass("dancingQueen");   // adding dancing queen animation   
+}
+function animationType5() {
+    $("#theHead").addClass("movingHead");
+    $(".d1").addClass("shinyDiamond");
+    $(".theHair").addClass("shinyHair");
+    $("#theArms").addClass("dancingQueen");   // adding hair | diamond  | dancing queen animation   
 }
 function resetAnimation() {
     $("#theHead").removeClass("movingHead");
@@ -208,21 +205,19 @@ function resetAnimation() {
     $(".theHair").removeClass("shinyHair");
     $("#theArms").removeClass("dancingQueen");
 }
-
 // Functions Eye Variations
 function normalEyes() {
-      $('.eyes').find('span').css('border', 'none');
+    $('.eyes').find('span').css('border', 'none');
 }
 function eyesType1() {
-      $('.eyes').find('span').css({'border-top': '15px solid', 'transform': 'rotate(-5deg)'});
+    $('.eyes').find('span').css({'border-top': '15px solid', 'transform': 'rotate(-5deg)'});
 }
 function eyesType2() {
-      $('.eyes').find('span').css({'border-bottom': '17px solid', 'transform': 'rotate(-125deg)'});
+    $('.eyes').find('span').css({'border-bottom': '17px solid', 'transform': 'rotate(-125deg)'});
 }
 function eyesType3() {
-      $('.eyes').find('span').css({'border-bottom': '15px solid', 'transform': 'rotate(-10deg)'});
+    $('.eyes').find('span').css({'border-bottom': '15px solid', 'transform': 'rotate(-10deg)'});
 }
-
 // Functions Bracelet variations 
 function normalDecoration() {
     $('.arms').find('span').css({"transform": "rotate(0deg)", "height": "30px", "width": "200px", "top": "120px", "border-radius": "10% 10% 10% 10%" });
@@ -233,7 +228,6 @@ function decorationType1() {
 function decorationType2() {
     $('.arms').find('span').css({ "transform": "rotate(0deg)", "height": "18px", "width": "200px", "top": "140px", "border-radius": "60% 60% 60% 60%" });
 }
-
 // Functions Dress variations
 function normalDress() {
     $('.dress').css({"border": "none", "top": "20px", "left": "28px","border-radius": "50% 50% 90% 90%"});
@@ -244,10 +238,3 @@ function dressType1() {
 function dressType2() {
     $('.dress').css({"border": "none", "top": "2px", "left": "28px","border-radius": "185% 115% 90% 0%"});
 }
-
-
-
-/*
-    $('.cat__head-dots_first').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "50% 0 50% 50%" })
-    $('.cat__head-dots_second').css({ "transform": "rotate(0deg)", "height": "35px", "width": "14px", "top": "1px", "border-radius": "0 50% 50% 50%" })
-*/
