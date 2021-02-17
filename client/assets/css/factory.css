@@ -1,13 +1,13 @@
-.catBox {
+.ladyBox {
     background-color: #e2efff;
     border-radius: 10px;
     padding-top: 22px;
     padding-left: 28px;
     padding-bottom: 48px;
-    height: 98vh;
-    overflow: hidden;
+    height: 90vh;
+    overflow: scroll;
 }
-.cattributes {
+.dragtributes {
     padding: 25px;
     background-color: #ededed;
     border-radius: 10px;
@@ -19,6 +19,6 @@
     bottom: 5px;
 }
 
-.cat {
+.lady {
     position: absolute;
 }
