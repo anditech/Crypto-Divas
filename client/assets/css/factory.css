@@ -2,10 +2,9 @@
     background-color: #e2efff;
     border-radius: 10px;
     padding-top: 22px;
-    padding-left: 28px;
     padding-bottom: 48px;
-    height: 90vh;
-    overflow: scroll;
+    height: 570px;
+    transform: scale(0.9);
 }
 .dragtributes {
     padding: 25px;
@@ -19,6 +18,4 @@
     bottom: 5px;
 }
 
-.lady {
-    position: absolute;
-}
+

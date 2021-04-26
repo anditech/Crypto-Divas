@@ -4,17 +4,16 @@
 
 @keyframes moveHead {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg) translateX(-50%) ;
     }
     30% {
-        transform: rotate(8deg);
-        
+        transform: rotate(8deg) translateX(-50%);
     }
     60% {
-        transform: rotate(-28de);
+        transform: rotate(-28de) translateX(-50%);
     }
     100% {
-        transform: rotate(0deg);
+        transform: rotate(0deg) translateX(-50%);
     }
 }
 
@@ -98,15 +97,15 @@
 
 @keyframes dance {
     0% {
-        transform: skew(6deg, 0deg);
+        transform: skew(6deg, 0deg) translateX(-50%);
     }
     30% {
-        transform: skew(0deg, 1deg);
+        transform: skew(0deg, 1deg) translateX(-50%);
     }
     60% {
-        transform: skew(-6deg, -1deg);
+        transform: skew(-6deg, -1deg) translateX(-50%);
     }
     100% {
-        transform: skew(6deg, 0deg);
+        transform: skew(6deg, 0deg) translateX(-50%);
     }
 }

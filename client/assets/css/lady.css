@@ -54,8 +54,8 @@ body {
     height: var(--height-head);
     border-radius: 50%;
     position: absolute;
-    left: 50px;
-    right: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 50px;
 }
 .eyes {
@@ -121,7 +121,6 @@ body {
     height: var(--height-hair);
     transform: translate(25px, -6px);
     position: absolute;
-    z-index: 2;
   }
   .hair div:nth-child(1) {
     border-radius: 30% 70% 0% 50% / 45% 100% 0% 50%;
@@ -146,13 +145,11 @@ body {
     display: block;
     width: 66px;
     height: 44px;
-    transform: rotate(174deg) translate(-35px, -15px);
     border-radius: 81% / 100%;
     box-shadow: 3px 20px 0 0 var(--hair-color);
     position: absolute;
     bottom: -46px;
     right: 7px;
-    z-index: -1;
     transform: rotate(-143deg);
   }
   .hair div:nth-child(2) {
@@ -168,7 +165,6 @@ body {
     box-shadow: inset -10px -21px 20px var(--hair-color);
     transform: rotate(-6deg);
     position: absolute;
-    z-index: -2;
     right: 50px;
     bottom: 48px;
   }
@@ -197,9 +193,7 @@ body {
     position: absolute;
     left: -17px;
     bottom: 36px;
-    z-index: -2;
     transform: rotate(-129deg);
-    transform-origin: center;
   }
   .hair div:nth-child(4) {
     border-radius: 70% 30% 61% 39% / 60% 26% 74% 40%;
@@ -212,7 +206,6 @@ body {
     bottom: 5px;
     z-index: -9;
     transform: rotate(12deg);
-    transform-origin: center;
   }
   .hair div:nth-child(5) {
     border-radius: 30% 70% 0% 50% / 45% 100% 0% 50%;
@@ -285,7 +278,8 @@ body {
     height: var(--arms-height);
     background-color: var(--arms-color);
     top: 219px;
-    left: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 50% 50% 15% 15%;
 }
 .dress {
