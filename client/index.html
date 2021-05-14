@@ -95,8 +95,8 @@
             <!-- Buttons and Collapse -->
             <div class="col-lg-7 "> 
                 <p>
-                    <a class="btn btn-info" data-toggle="collapse" href="#multiCollapseColors" role="button" aria-expanded="false" aria-controls="multiCollapseColors">Colors</a>
-                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#multiCollapseDragttributes" aria-expanded="false" aria-controls="multiCollapseDragttributes">Dragttributes</button>
+                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseColors" aria-expanded="false" aria-controls="collapseColors">Colors</button>
+                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseDragttributes" aria-expanded="false" aria-controls="collapseDragttributes">Dragttributes</button>
                 
                 <!--Buttons for Random Lady, Default Lady & Create Lady-->
                     <button onclick="randomLady()" type="button" class="btn btn-primary">Random</button>
@@ -105,7 +105,7 @@
                 </p>
                     
                 <div class="row">
-                    <div class="col-lg-12 collapse multi-collapse dragtributes m-2 light-b-shadow" id="multiCollapseColors"> 
+                    <div class="col collapse dragttributes m-2 light-b-shadow" id="collapseColors"> 
 
                             <div class="form-group">
                                 <label for="bodycolor"><b>Head & body color</b><span class="badge badge-dark ml-2" id="headcode"></span></label>
@@ -132,9 +132,7 @@
                 </div>
                 
                 <div class="row">  
-                    <div class="col-lg-12 collapse multi-collapse dragtributes m-2 light-b-shadow" id="multiCollapseDragttributes">
-                
-                        <div id="dragttributes">
+                    <div class="col collapse dragttributes m-2 light-b-shadow" id="collapseDragttributes">
                         
                             <div class="form-group">
                                 <label for="eyeShape"><b>Eyes shape</b><span class="badge badge-dark ml-2" id="eyeName"></span></label>
@@ -162,7 +160,6 @@
                                 <label for="animation"><b>Animation</b><span class="badge badge-dark ml-2" id="animationName"></span></label>
                                 <input type="range" min="1" max="5" class="form-control-range" id="animation">
                             </div>
-                        </div>
                     </div>  
 
                 </div>

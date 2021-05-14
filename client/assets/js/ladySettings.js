@@ -48,6 +48,29 @@ function getDna(){
 }
 //Function triggered by the Random Lady Button
 function randomLady() {
+  
+  let random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  
+  let randomDNA = {
+      "headcolor" : random(10, 98),
+      "mouthColor": random(10, 98),
+      "eyesColor" : random(10, 98),
+      "dressColor" : random(10, 98),
+    
+      "eyeShape" : random(1, 4),
+      "fashionShape" : random(1, 9),
+      "flowerColor" : random(10, 98),
+      "flowerColor2" : random(31, 51),
+    
+      "animation" : random(1, 5),
+      "lastNum" :  1
+  }
+  
+  renderLady(randomDNA);
+}
+
+  /*
+function randomLady() {
   let randomDNA = {
     "headcolor" : Math.floor(Math.random() * 89) + 10, 
     "mouthColor": Math.floor(Math.random() * 89) + 10,
@@ -64,6 +87,10 @@ function randomLady() {
   }
   renderLady(randomDNA)
 }
+
+*/
+
+
 //Function triggered by the Default Lady Button
 function defaultLady() {
   renderLady(defaultDNA)

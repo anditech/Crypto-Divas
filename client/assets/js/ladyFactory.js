@@ -35,12 +35,12 @@ function dressColor(color, code) {
     $('#dnadress').html(code);   // This updates the dress color part of the DNA that is displayed below the lady
 }
 function flowerColor(color,code) {
-    $('.missTake').css('--flower-side-color', '#' + color);   // This changes the color of the center petals
+    $('.missTake').css('--flower-side-color', '#' + color);   // This changes the color of the side petals
     $('#flowerCode').html('code: ' + code);   // This updates text of the badge next to slider
     $('#dnaflower').html(code);   // This updates the flower part of the DNA that is displayed below the lady
 }
 function flowerColor2(color, code) {
-    $('.missTake').css('--flower-mid-color', '#' + color);   // This changes the color of the side petals
+    $('.missTake').css('--flower-mid-color', '#' + color);   // This changes the color of the center petals
     $('#flowerCode2').html('code: ' + code);   // This updates text of the badge next to slider
     $('#dnaFlowerColor2').html(code);   // This updates the flower part of the DNA that is displayed below the lady
 }
@@ -151,7 +151,7 @@ function animationVariation(num) {
 }
 function animationType1() {
     resetAnimation();     // Resets animation 
-    $("#theHead").addClass("movingHead");
+    $(".head").addClass("movingHead");
 }
 function animationType2() {
     resetAnimation();     // Resets animation 
@@ -163,23 +163,23 @@ function animationType3() {
 }
 function animationType4() {
     resetAnimation();   // Resets animation 
-    $("#theArms").addClass("dancingQueen");   // Adds dancing queen animation   
+    $(".arms").addClass("dancingQueen");   // Adds dancing queen animation   
 }
 function animationType5() {
-    $("#theHead").addClass("movingHead");
+    $(".head").addClass("movingHead");
     $(".d1").addClass("shinyDiamond");
     $(".theHair").addClass("shinyHair");
-    $("#theArms").addClass("dancingQueen");   // Adds ALL animations  
+    $(".arms").addClass("dancingQueen");   // Adds ALL animations 
 }
 function resetAnimation() {
-    $("#theHead").removeClass("movingHead");
+    $(".head").removeClass("movingHead");
     $(".d1").removeClass("shinyDiamond");
     $(".theHair").removeClass("shinyHair");
-    $("#theArms").removeClass("dancingQueen");  // Resets animations 
+    $(".arms").removeClass("dancingQueen");  // Resets ALL animations 
 }
-// Functions Eye Variations
-function normalEyes() {
-    $('.eyes').find('span').css('border', 'none');
+// Functions Eye Shapes
+function normalEyes() { 
+    $('.eyes').find('span').css({'border': 'none'});
 }
 function eyesType1() {
     $('.eyes').find('span').css({'border-top': '15px solid', 'transform': 'rotate(-5deg)'});

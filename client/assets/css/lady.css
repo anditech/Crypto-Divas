@@ -127,7 +127,7 @@ body {
     background-color: var(--hair-color);
     background: radial-gradient(
       circle at bottom left,
-      var(--hair2-color) 0%,
+      #1d528a,
       var(--hair-color) 60%,
       #1d528a 100%
     );
@@ -156,9 +156,10 @@ body {
     border-radius: 70% 55% 10% 71% / 90% 78% 0% 50%;
     background-color: var(--hair-color);
     background: radial-gradient(
-      circle at top left,
-      var(--hair-color) 50%,
-      var(--hair2-color) 100%
+      circle at bottom left,
+      #1d528a,
+      var(--hair-color) 60%,
+      #1d528a 100%
     );
     width: 115px;
     height: 62px;
@@ -183,9 +184,10 @@ body {
     border-radius: 47% 75% 69% 24% / 41% 48% 60% 50%;
     background-color: var(--hair-color);
     background: radial-gradient(
-      ellipse at top left,
-      var(--hair-color) 30%,
-      var(--hair2-color) 100%
+      circle at bottom left,
+      #1d528a,
+      var(--hair-color) 60%,
+      #1d528a 100%
     );
     width: 51px;
     height: 70px;
@@ -212,7 +214,7 @@ body {
     background-color: var(--hair-color);
     background: radial-gradient(
       circle at bottom left,
-      var(--hair2-color) 0%,
+      #1d528a,
       var(--hair-color) 60%,
       #1d528a 100%
     );
@@ -230,7 +232,7 @@ body {
     background-color: var(--hair-color);
     background: radial-gradient(
       circle at bottom left,
-      var(--hair2-color) 0%,
+      #1d528a,
       var(--hair-color) 60%,
       #1d528a 100%
     );

@@ -3,17 +3,11 @@
 }
 
 @keyframes moveHead {
-    0% {
-        transform: rotate(0deg) translateX(-50%) ;
+    0%, 60%, 100% {
+        transform: translateX(-50%) rotate(0deg);
     }
     30% {
-        transform: rotate(8deg) translateX(-50%);
-    }
-    60% {
-        transform: rotate(-28de) translateX(-50%);
-    }
-    100% {
-        transform: rotate(0deg) translateX(-50%);
+        transform: translateX(-50%) rotate(8deg) ;
     }
 }
 
@@ -44,49 +38,22 @@
 }
 
 @keyframes shine2 {
-    0% {
-        background-color: #f5f1a9;
+    0%, 50%, 100% {
         background: radial-gradient(
         circle at bottom left,
         #1d528a 0%,
         #f5f1a9 60%,
-        #1d528a 100%);
+        #1d528a 100%
+        );
     
     }
-    25% {
-        background-color: #f5f1a9;
+    25%, 75% {
         background: radial-gradient(
         circle at bottom left,
         #f5f1a9 0%,
         #1d528a 60%,
-        #1d528a 100%);
-        
-    }
-    50% {
-        background-color: #f5f1a9;
-        background: radial-gradient(
-        circle at bottom left,
-        #1d528a 0%,
-        #f5f1a9 60%,
-        #1d528a 100%);
-        
-    }
-    75% {
-        background-color: #f5f1a9;
-        background: radial-gradient(
-        circle at bottom left,
-        #f5f1a9 0%,
-        #1d528a 60%,
-        #1d528a 100%);
-        
-    }
-    100% {
-        background-color: #f5f1a9;
-        background: radial-gradient(
-        circle at bottom left,
-        #1d528a 0%,
-        #f5f1a9 60%,
-        #1d528a 100%);
+        #1d528a 100%
+        );
     }
         
 }
@@ -96,16 +63,14 @@
 }
 
 @keyframes dance {
-    0% {
-        transform: skew(6deg, 0deg) translateX(-50%);
+    0%, 100% {
+        transform: translateX(-50%) skew(0deg, 0deg) ;
     }
     30% {
-        transform: skew(0deg, 1deg) translateX(-50%);
+        transform: translateX(-50%) skew(6deg, 1deg) ;
     }
     60% {
-        transform: skew(-6deg, -1deg) translateX(-50%);
+        transform: translateX(-50%) skew(-6deg, 1deg) ;
     }
-    100% {
-        transform: skew(6deg, 0deg) translateX(-50%);
-    }
+    
 }
