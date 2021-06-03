@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <script src="assets/bootstrap/js/popper.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/web3.min.js"></script>
+  <script src="./abi.js"></script>
+  
 
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/mystyle.css">
@@ -92,21 +95,25 @@
                 </div>
             </div>     
 
-            <!-- Buttons and Collapse -->
+            <!-- Buttons -->
             <div class="col-lg-7 "> 
                 <p>
+            <!-- Toggle button for Colors -->        
                     <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseColors" aria-expanded="false" aria-controls="collapseColors">Colors</button>
-                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseDragttributes" aria-expanded="false" aria-controls="collapseDragttributes">Dragttributes</button>
-                
-                <!--Buttons for Random Lady, Default Lady & Create Lady-->
+            <!-- Toggle button for Dragttributes -->  
+                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseDragttributes" aria-expanded="false" aria-controls="collapseDragttributes">Dragttributes</button>     
+            <!-- Toggle button for a Random Lady -->
                     <button onclick="randomLady()" type="button" class="btn btn-primary">Random</button>
+            <!-- Toggle button to go back to  Default Lady -->        
                     <button onclick="defaultLady()" type="button" class="btn btn-secondary">Default</button>
+            <!-- Toggle button to Create a new Lady -->        
                     <button type="button" class="btn btn-success">Create</button>
                 </p>
-                    
+
+            <!-- Collapse Panes for Color Sliders  -->         
                 <div class="row">
                     <div class="col collapse dragttributes m-2 light-b-shadow" id="collapseColors"> 
-
+                            
                             <div class="form-group">
                                 <label for="bodycolor"><b>Head & body color</b><span class="badge badge-dark ml-2" id="headcode"></span></label>
                                 <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
@@ -131,6 +138,7 @@
             
                 </div>
                 
+                <!-- Collapse Panes for Dragttribute Sliders -->
                 <div class="row">  
                     <div class="col collapse dragttributes m-2 light-b-shadow" id="collapseDragttributes">
                         
@@ -173,6 +181,7 @@
         <p>Ivan on Tech Academy Bootcamp by Andres Aedo</p>
     </footer>
 </body>
+  <script src="./index.js"></script>
   <script src="assets/js/colors.js"></script>
   <script src="assets/js/ladySettings.js"></script>
   <script src="assets/js/ladyFactory.js"></script>

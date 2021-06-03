@@ -69,28 +69,6 @@ function randomLady() {
   renderLady(randomDNA);
 }
 
-  /*
-function randomLady() {
-  let randomDNA = {
-    "headcolor" : Math.floor(Math.random() * 89) + 10, 
-    "mouthColor": Math.floor(Math.random() * 89) + 10,
-    "eyesColor" : Math.floor(Math.random() * 89) + 10,
-    "dressColor" : Math.floor(Math.random() * 89) + 10,
-    // Dragttributes
-    "eyeShape" : Math.floor(Math.random() * 4) + 1,
-    "fashionShape" : Math.floor(Math.random() * 9) + 1,
-    "flowerColor" : Math.floor(Math.random() * 89) + 10,
-    "flowerColor2" : Math.floor(Math.random() * (51 - 31 + 1)) + 31, // Range between 31 and 51
-    // Animation
-    "animation" : Math.floor(Math.random() * 5) + 1,
-    "lastNum" :  1,
-  }
-  renderLady(randomDNA)
-}
-
-*/
-
-
 //Function triggered by the Default Lady Button
 function defaultLady() {
   renderLady(defaultDNA)
