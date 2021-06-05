@@ -4,7 +4,7 @@ import "./IERC721.sol";
 
 contract Ladycontract is IERC721, Ownable  {
 
-    uint256 public constant CREATION_LIMIT_GEN0 = 10;
+    uint256 public constant CREATION_LIMIT_GEN0 = 20;
     string public constant name = "CryptoLadies";
     string public constant symbol = "LADY";
 

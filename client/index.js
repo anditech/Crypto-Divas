@@ -2,7 +2,7 @@ var web3 = new Web3(Web3.givenProvider);
 
 var instance;
 var user;
-var contractAddress = "0xb73ca45343045B143cD9D99202cf87b07B87Df67";
+var contractAddress = "0xFd53167667F6FE194e6aCc8720BeCf41DFF2bF98";
 
 $(document).ready(function(){
     window.ethereum.enable().then(function(accounts){
@@ -11,5 +11,33 @@ $(document).ready(function(){
 
         console.log(instance);
 
+        instance.events.Birth().on('data', function(event){
+            console.log(event);
+            let owner = event.returnValues.owner;
+            let littleLadyId = event.returnValues.littleLadyId;
+            let ladyMomId = event.returnValues.ladyMomId;
+            let ladyDadId = event.returnValues.ladyDadId;
+            let genes = event.returnValues.genes
+            $("#ladyCreation").css("display", "block");
+            $("#ladyCreation").text("Bravo, you just created a Lady! Owner: " + owner 
+                                +" Little Lady Id: " + littleLadyId 
+                                +" Lady Mom Id: " + ladyMomId 
+                                +" Lady Dad Id: " + ladyDadId
+                                +" Genes: " + genes)
+
+        }).on('error', console.error);
+
     })
 })
+
+function createLady(){
+    var dnaString = getDna();
+    instance.methods.createLadyGen0(dnaString).send({}, function(error, txHash){
+        if(error)
+            console.log(err);
+        else
+            console.log("Success " + txHash);
+    })
+}
+
+
