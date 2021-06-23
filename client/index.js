@@ -2,7 +2,7 @@ var web3 = new Web3(Web3.givenProvider);
 
 var instance;
 var user;
-var contractAddress = "0xFd53167667F6FE194e6aCc8720BeCf41DFF2bF98";
+var contractAddress = "0x417d147023a41d29Aa58b2DB4f84B567ABA91b13";
 
 $(document).ready(function(){
     window.ethereum.enable().then(function(accounts){
@@ -39,5 +39,4 @@ function createLady(){
             console.log("Success " + txHash);
     })
 }
-
 

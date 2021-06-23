@@ -9,7 +9,7 @@ html {
     overflow-y: scroll;
 }
 body {
-    background: #f1cef5;
+    background: linear-gradient(90deg, #ac80ff 6%,#ba9df2 25%,#edb3f5 45%,#e88ef5 55%,#e46ef5 94%);
 }
 .missTake {
     --head-color: darksalmon;

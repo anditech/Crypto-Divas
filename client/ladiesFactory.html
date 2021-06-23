@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,6 +20,26 @@
   <link rel="stylesheet" href="assets/css/frontend.css">
 </head>
   <body>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./home.html">Crypto Drags</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+                  <a class="nav-link" href="./runway.html">Runway</a>
+                  <a class="nav-link" href="./ladiesFactory.html">Ladies Factory</a>
+                  <button type="button" class="btn btn-light">Start</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </div>  
+
     <div class="container p-5" style="margin-top: 12vh;margin-bottom: 10vh;">
         <div align="center">
             <h1 class="c-white">Ladies-Factory</h1>
@@ -97,19 +118,20 @@
 
             <!-- Buttons -->
             <div class="col-lg-7 "> 
-                <p>
-            <!-- Toggle button for Colors -->        
-                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseColors" aria-expanded="false" aria-controls="collapseColors">Colors</button>
-            <!-- Toggle button for Dragttributes -->  
-                    <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseDragttributes" aria-expanded="false" aria-controls="collapseDragttributes">Dragttributes</button>     
-            <!-- Toggle button for a Random Lady -->
-                    <button onclick="randomLady()" type="button" class="btn btn-primary">Random</button>
-            <!-- Toggle button to go back to  Default Lady -->        
-                    <button onclick="defaultLady()" type="button" class="btn btn-secondary">Default</button>
-            <!-- Toggle button to Create a new Lady -->        
-                    <button onclick="createLady()" type="button" class="btn btn-success">Create</button>
-                </p>
-
+                <div class="row">
+                    <p>
+                <!-- Toggle button for Colors -->        
+                        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseColors" aria-expanded="false" aria-controls="collapseColors">Colors</button>
+                <!-- Toggle button for Dragttributes -->  
+                        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseDragttributes" aria-expanded="false" aria-controls="collapseDragttributes">Dragttributes</button>     
+                <!-- Toggle button for a Random Lady -->
+                        <button onclick="randomLady()" type="button" class="btn btn-primary">Random</button>
+                <!-- Toggle button to go back to  Default Lady -->        
+                        <button onclick="defaultLady()" type="button" class="btn btn-secondary">Default</button>
+                <!-- Toggle button to Create a new Lady -->        
+                        <button onclick="createLady()" type="button" class="btn btn-success">Create</button>
+                    </p>
+                </div>
                 
 
             <!-- Collapse Panes for Color Sliders  -->         

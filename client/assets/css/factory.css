@@ -1,15 +1,19 @@
 .ladyBox {
-    background-color: #e2efff;
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     padding-top: 22px;
     padding-bottom: 48px;
     height: 570px;
     transform: scale(0.9);
+    border: 1px solid rgba(255,255,255,0.2);
+    
 }
 .dragttributes {
     padding: 25px;
-    background-color: #ededed;
+    background-color: rgba(255,255,255,0.4);
     border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
     
 }
 .dnaDiv {
@@ -18,4 +22,59 @@
     bottom: 5px;
 }
 
+.btn {
+    margin: 3px;
+}
 
+.cuadroBlur {
+    position: relative;
+    margin: auto;
+    padding: 40;
+    width: 1250px;
+    height: 600px;
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    align-items: flex-end;
+    
+  }
+
+  .ladiesShots {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+  }
+
+   img.b  {
+    width: 210px;
+    height: 400px;
+    margin: 10px;
+    object-position: center;
+    border-radius: 10px;
+    display: flex;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+  }
+
+  .secondTitle {
+      text-align: center;
+      padding: 30px;
+  }
+
+  .cards{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    
+  }
+
+  .card {
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  

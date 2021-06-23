@@ -50,6 +50,21 @@ function getLady(uint256 _id) external view returns (
 
 }
 
+function ladiesOfOwner(address _owner) external view returns (uint256[] memory) {
+    // array of fixed size as I know the balanceOf(address owner) tokens which is set as ownershipTokenCount array of _owner
+    uint256[] memory result = new uint256[](ownershipTokenCount[_owner]);
+    // counter starts at 0 as per the first index of array which is also the ID of ladies
+    uint256 counter = 0;
+    // loop thru all the ladies[] to find the ladies owned by _owner
+    for (uint256 i = 0; i < ladies.length; i++) {
+            if (ladyIndexToOwner[i] == _owner) {
+                result[counter] = i;
+                counter++;
+            }
+    }
+    return result;  // this will return an array of indexes owned by _owner
+}
+
 function createLadyGen0(uint256 _genes) public onlyOwner returns (uint256) {
     require(gen0Counter < CREATION_LIMIT_GEN0);
 
@@ -83,6 +98,7 @@ function _createLady(
     _transfer(address(0), _owner, newLadyId);
 
     return newLadyId;
+
 }
 
 function balanceOf(address owner) external view returns (uint256 balance){ 
@@ -124,5 +140,23 @@ function _owns(address _claimant, uint256 _tokenId) internal view returns (bool)
     return ladyIndexToOwner[_tokenId] == _claimant;
 
 }
+
+/*
+function _name() external view returns (string memory tokenName) {
+    tokenName = name;
+    return
+};
+
+
+ function _symbol() external view returns (string memory tokenSymbol) {
+
+ };
+
+
+
+*/
+
+
+
 
 }
