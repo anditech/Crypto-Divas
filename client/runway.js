@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   //      console.log(instance);
 
-        // as reccomended by Jon's template the call of the inital function is here
+        // as reccomended by template the call of the inital function is here
 
         showLadies();
 
@@ -45,27 +45,20 @@ $(document).ready(function(){
 // Initial  function call
 
 async function showLadies(){
-    var ladyArray;
-    var myLady;
+    let idsArray;
     try{
-        ladyArray = await instance.methods.ladiesOfOwner(user).call();
-        console.log(ladyArray);
+        idsArray = await instance.methods.ladiesOfOwner(user).call();
+        console.log(idsArray);
     } catch(err){
         console.log(err + "Can't get the array");
     }
-    for (let i = 0; i < ladyArray.length; i++) {
-        myLady = await instance.methods.getLady(ladyArray[i]).call();
-        console.log(myLady);
+    for (let i = 0; i < idsArray.length; i++) {
+       let myLadyData = await instance.methods.getLady(idsArray[i]).call();
+        console.log(myLadyData);
         
     } 
     
     }
-
-    
-async function showMyLadies(id) {
-    let ladyData = await instance.methods.getLady(id).call();
-    insertLady(id);
-}
 
 // Function Control to organize the different steps 
 function insertLady(id) {
