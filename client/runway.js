@@ -34,18 +34,16 @@ async function showLadies(){
        let id = idsArray[i];
         console.log(myLadyData);
         console.log(id);
-        
+        insertLady(myLadyData, id);
     } 
     
     }
 
-    
-
-
-
 // Function Control to organize the different steps 
-function insertLady(id) {
-    ladyHtml(id);
+function insertLady(myLadyData,id) {
+    ladyHtml(id);  // => adds HTML string to runway.html
+
+    let dnaObject = ladyObj(myLadyData);  // => reorganises the single DNA strand as an object from lady object
 }
 
 

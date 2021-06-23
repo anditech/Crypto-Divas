@@ -78,7 +78,7 @@ function ladyHtml(id){
 
 }
 
-/* function ladyObj(ladyData) {
+/* function ladyObj(myLadyData) {
     let dna = {
 
     }
