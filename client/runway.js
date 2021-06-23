@@ -14,35 +14,44 @@ $(document).ready(function(){
         // as reccomended by template the call of the inital function is here
 
         showLadies();
-
-/*
-
-//      I had my function this way before 
-
-        async function showLadies(){
-            var ladyArray;
-            var myLady;
-            try{
-                ladyArray = await instance.methods.ladiesOfOwner(user).call();
-                console.log(ladyArray);
-            } catch(err){
-                console.log("Can't get the array");
-            }
-            for (let i = 0; i < ladyArray.length; i++) {
-                myLady = await instance.methods.getLady(ladyArray[i]).call();
-                console.log(myLady);
-                
-            } 
-            
-            }
-            showLadies();
-            */
     });
     
 });
 
-
 // Initial  function call
+
+async function showLadies(){
+    let idsArray;
+    try {
+        idsArray = await instance.methods.ladiesOfOwner(user).call(); 
+    } catch(err){
+        console.log(err + "Can't get the array");
+    }
+    console.log(idsArray);
+
+    for (let i = 0; i < idsArray.length; i++) {
+       let myLadyData = await instance.methods.getLady(idsArray[i]).call();
+       let id = idsArray[i];
+        console.log(myLadyData);
+        console.log(id);
+        
+    } 
+    
+    }
+
+    
+
+
+
+// Function Control to organize the different steps 
+function insertLady(id) {
+    ladyHtml(id);
+}
+
+
+
+/*
+
 
 async function showLadies(){
     let idsArray;
@@ -52,6 +61,8 @@ async function showLadies(){
     } catch(err){
         console.log(err + "Can't get the array");
     }
+
+    
     for (let i = 0; i < idsArray.length; i++) {
        let myLadyData = await instance.methods.getLady(idsArray[i]).call();
         console.log(myLadyData);
@@ -60,7 +71,5 @@ async function showLadies(){
     
     }
 
-// Function Control to organize the different steps 
-function insertLady(id) {
-    ladyHtml(id);
-}
+
+*/
