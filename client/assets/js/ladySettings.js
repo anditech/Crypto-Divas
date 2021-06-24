@@ -3,18 +3,18 @@ var colors = Object.values(allColors())
 
 var defaultDNA = {
   // Colors
-    "headcolor" : 19,
-    "mouthColor": 83,
-    "eyesColor" : 79,
-    "dressColor" : 70,
+    headcolor : 19,
+    mouthColor : 83,
+    eyesColor : 79,
+    dressColor : 70,
     // Dragttributes
-    "eyeShape" : 1,
-    "fashionShape" : 3,
-    "flowerColor" : 87,
-    "flowerColor2" : 31,
+    eyeShape : 1,
+    fashionShape : 3,
+    flowerColor : 87,
+    flowerColor2 : 31,
     // Animation
-    "animation" : 2,
-    "lastNum" :  1,
+    animation : 2,
+    lastNum :  1,
     }
 // when page load
 $( document ).ready(function() {
@@ -52,18 +52,18 @@ function randomLady() {
   let random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   
   let randomDNA = {
-      "headcolor" : random(10, 98),
-      "mouthColor": random(10, 98),
-      "eyesColor" : random(10, 98),
-      "dressColor" : random(10, 98),
+      headcolor : random(10, 98),
+      mouthColor: random(10, 98),
+      eyesColor : random(10, 98),
+      dressColor : random(10, 98),
     
-      "eyeShape" : random(1, 4),
-      "fashionShape" : random(1, 9),
-      "flowerColor" : random(10, 98),
-      "flowerColor2" : random(31, 51),
+      eyeShape : random(1, 4),
+      fashionShape : random(1, 9),
+      flowerColor : random(10, 98),
+      flowerColor2 : random(31, 51),
     
-      "animation" : random(1, 5),
-      "lastNum" :  1
+      animation : random(1, 5),
+      lastNum :  1
   }
   
   renderLady(randomDNA);

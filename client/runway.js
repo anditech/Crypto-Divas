@@ -40,34 +40,29 @@ async function showLadies(){
     }
 
 // Function Control to organize the different steps 
-function insertLady(myLadyData,id) {
+function insertLady(myLadyData, id) {
     ladyHtml(id);  // => adds HTML string to runway.html
 
     let dnaObject = ladyObj(myLadyData);  // => reorganises the single DNA strand as an object from lady object
+
+
+// This function shows Lady details... not yet defined
+/* function ladyDetails(myLadyData) {
+    myLadyData.generation
+    myLadyData.birthtime
+}
+*/
+
+// calls functions which style the HTML for each separate owned lady
+// I can't make this function work.
+// function renderFreshlady(dna, id);
+
+
 }
 
 
 
-/*
 
 
-async function showLadies(){
-    let idsArray;
-    try{
-        idsArray = await instance.methods.ladiesOfOwner(user).call();
-        console.log(idsArray);
-    } catch(err){
-        console.log(err + "Can't get the array");
-    }
-
-    
-    for (let i = 0; i < idsArray.length; i++) {
-       let myLadyData = await instance.methods.getLady(idsArray[i]).call();
-        console.log(myLadyData);
-        
-    } 
-    
-    }
 
 
-*/

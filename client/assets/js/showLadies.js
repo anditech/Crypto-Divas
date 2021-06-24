@@ -70,6 +70,7 @@ function ladyHtml(id){
                     <span id="dnaspecial"></span>
                 </b>
             </div>
+            
         </div> 
                 `
         console.log(ladyString);
@@ -78,10 +79,53 @@ function ladyHtml(id){
 
 }
 
-/* function ladyObj(myLadyData) {
+function ladyObj(myLadyData) {
+
     let dna = {
+        // Colors
+    headcolor : myLadyData.genes.substring(0, 2),   
+    mouthColor : myLadyData.genes.substring(2, 4),
+    eyesColor : myLadyData.genes.substring(4, 6),
+    dressColor : myLadyData.genes.substring(6, 8),
+    // Dragttributes
+    eyeShape : myLadyData.genes.substring(8, 9),
+    fashionShape : myLadyData.genes.substring(9, 10),
+    flowerColor : myLadyData.genes.substring(10, 12),
+    flowerColor2 : myLadyData.genes.substring(12, 14),
+    // Animation
+    animation : myLadyData.genes.substring(14, 15),
+    lastNum :  myLadyData.genes.substring(15, 16)
+    };
 
-    }
-
+    console.log(dna);
+    return dna;
 } 
-*/
+
+function ladyDetails() {
+
+}
+
+
+function renderFreshlady(dnaObject, id) {
+
+
+    headColor(colors[dnaObject.headcolor],dnaObject.headcolor, id);
+    
+    mouthColor(colors[dnaObject.mouthColor],dnaObject.mouthColor, id);
+    
+    eyeColor(colors[dnaObject.eyesColor],dnaObject.eyesColor, id);
+    
+    dressColor(colors[dnaObject.dressColor],dnaObject.dressColor, id);
+    
+    eyeVariation(dnaObject.eyeShape, id);
+    
+    fashionVariation(dnaObject.fashionShape, id);
+    
+    flowerColor(colors[dnaObject.flowerColor],dnaObject.flowerColor, id);
+    
+    flowerColor2(colors[dna.OdnaObjectflowerColor2],dnaObject.flowerColor2, id);
+    
+    animationVariation(dnaObject.animation, id);
+    
+}
+   
