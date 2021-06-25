@@ -2,7 +2,7 @@
 // Function that adds HTML string to runway.html
 function ladyHtml(id){               
     let ladyString = 
-                `<div class="col-lg-4 ladyBox id="ladyId ${id}" $m-2 light-b-shadow">
+                `<div id="ladyId${id}" class="col-lg-4 ladyBox  $m-2 light-b-shadow" >
                 <!-- My Lady -->
                 <div class="missTake">
                     <div id="theHead" class="head">
@@ -54,6 +54,14 @@ function ladyHtml(id){
             <!-- DNA of lady -->
             <div class="dnaDiv" id="ladyDNA">
                 <b>
+
+                <ul class="myLadyDetails">
+                    <li id="ladyMomId"></li>
+                    <li id="ladyDadId"></li>
+                    <li id="generation"></li>
+                    <li id="birthTime"></li>
+                 </ul>
+
                     DNA:
                     <!-- Colors -->
                     <span id="dnabody"></span>
@@ -68,17 +76,20 @@ function ladyHtml(id){
                     <span id="dnaFlowerColor2"></span>                                    
                     <span id="dnaanimation"></span>
                     <span id="dnaspecial"></span>
+
+                    
                 </b>
             </div>
+                
+            
             
         </div> 
                 `
-        console.log(ladyString);
-
+        //  console.log(ladyString);
        $("#ladyDiv").prepend(ladyString);
-
 }
 
+// Object to organize each gene
 function ladyObj(myLadyData) {
 
     let dna = {
@@ -97,16 +108,24 @@ function ladyObj(myLadyData) {
     lastNum :  myLadyData.genes.substring(15, 16)
     };
 
-    console.log(dna);
+    //console.log(dna);
     return dna;
 } 
 
-function ladyDetails() {
-
+// Function showing details about each lady 
+function ladyDetails(myLadyData, id) {
+    $(`#ladyId${id} #ladyMomId`).html('Lady Mom ID: ' + myLadyData.ladyMomId);
+    $(`#ladyId${id} #ladyDadId`).html('Lady Dad ID: ' + myLadyData.ladyDadId);
+    $(`#ladyId${id} #generation`).html('Generation: ' + myLadyData.generation);
+    $(`#ladyId${id} #birthTime`).html(`Birth: ${ladyBirth(myLadyData.birthTime)}`);
 }
 
 
 function renderFreshlady(dnaObject, id) {
+
+    let eyeNumber = parseInt(dnaObject.eyeShape);
+    let fashionNumber = parseInt(dnaObject.fashionShape);
+    let animationNumber = parseInt(dnaObject.animation);
 
 
     headColor(colors[dnaObject.headcolor],dnaObject.headcolor, id);
@@ -117,15 +136,39 @@ function renderFreshlady(dnaObject, id) {
     
     dressColor(colors[dnaObject.dressColor],dnaObject.dressColor, id);
     
-    eyeVariation(dnaObject.eyeShape, id);
+    eyeVariation(eyeNumber, id);
     
-    fashionVariation(dnaObject.fashionShape, id);
+    fashionVariation(fashionNumber, id);
     
     flowerColor(colors[dnaObject.flowerColor],dnaObject.flowerColor, id);
     
-    flowerColor2(colors[dna.OdnaObjectflowerColor2],dnaObject.flowerColor2, id);
+    flowerColor2(colors[dnaObject.flowerColor2],dnaObject.flowerColor2, id);
     
-    animationVariation(dnaObject.animation, id);
+    animationVariation(animationNumber, id);
     
 }
    
+
+// Time Stamp Function
+
+function ladyBirth(timestamp) {
+    // JavaScript Date object with the timestamp
+    let t = new Date(timestamp * 1000);
+
+    let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    let day = days[t.getDay()];
+    let d = t.getDate();
+    let m = months[t.getMonth()];
+    let y = t.getFullYear();
+    let h = t.getHours();
+    let min = t.getMinutes();
+    
+    let dateOB = `${day} ${d} ${m} ${y}`;
+    let hrs = ` at ${h}` + ':' + `${min}`;
+   // console.log(dateOB + hrs);
+
+    return dateOB + hrs;
+}
+

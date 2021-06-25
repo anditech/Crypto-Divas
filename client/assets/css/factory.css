@@ -32,11 +32,12 @@
     padding: 40;
     width: 1250px;
     height: 600px;
-    background: rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.4);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.2);
     align-items: flex-end;
+    transform: scale(0.9);
     
   }
 
@@ -75,6 +76,9 @@
     backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 1px solid rgba(255,255,255,0.2);
+    transform: scale(0.9);
   }
 
-  
+  ul.myLadyDetails {
+    list-style-type: none;
+  }

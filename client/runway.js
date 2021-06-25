@@ -32,8 +32,8 @@ async function showLadies(){
     for (let i = 0; i < idsArray.length; i++) {
        let myLadyData = await instance.methods.getLady(idsArray[i]).call();
        let id = idsArray[i];
-        console.log(myLadyData);
-        console.log(id);
+      //  console.log(myLadyData);
+      //  console.log(id);
         insertLady(myLadyData, id);
     } 
     
@@ -45,17 +45,11 @@ function insertLady(myLadyData, id) {
 
     let dnaObject = ladyObj(myLadyData);  // => reorganises the single DNA strand as an object from lady object
 
-
 // This function shows Lady details... not yet defined
-/* function ladyDetails(myLadyData) {
-    myLadyData.generation
-    myLadyData.birthtime
-}
-*/
-
+    ladyDetails(myLadyData, id); 
+    
 // calls functions which style the HTML for each separate owned lady
-// I can't make this function work.
-// function renderFreshlady(dna, id);
+    renderFreshlady(dnaObject, id);
 
 
 }
