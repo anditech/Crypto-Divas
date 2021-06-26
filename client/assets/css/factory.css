@@ -79,6 +79,10 @@
     transform: scale(0.9);
   }
 
+  a.custom-card,
+  a.custom-card:hover {
+  color: inherit;
+  }
   ul.myLadyDetails {
     list-style-type: none;
   }
