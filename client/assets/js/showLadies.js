@@ -120,7 +120,7 @@ function ladyDetails(myLadyData, id) {
     $(`#ladyId${id} #birthTime`).html(`Birth: ${ladyBirth(myLadyData.birthTime)}`);
 }
 
-
+// Function rendering each new created lady on runway.html
 function renderFreshlady(dnaObject, id) {
 
     let eyeNumber = parseInt(dnaObject.eyeShape);
@@ -152,7 +152,7 @@ function renderFreshlady(dnaObject, id) {
 // Time Stamp Function
 
 function ladyBirth(timestamp) {
-    // JavaScript Date object with the timestamp
+    //  Date object with the timestamp
     let t = new Date(timestamp * 1000);
 
     let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];

@@ -1,12 +1,14 @@
 pragma solidity ^0.5.12;
+
 import "./Ownable.sol";
 import "./IERC721.sol";
+import "./IERC721Receiver.sol";
 
 contract Ladycontract is IERC721, Ownable  {
 
     uint256 public constant CREATION_LIMIT_GEN0 = 20;
-    string public constant name = "CryptoLadies";
-    string public constant symbol = "LADY";
+    string public constant nombre = "CryptoLadies";
+    string public constant simbolo = "LADY";
 
     event Birth(
         address owner, 
@@ -29,6 +31,9 @@ Lady[] ladies;  // Array that holds each Lady, the first lady will have ID[0] an
 
 mapping (uint256 => address) public ladyIndexToOwner; // mapping from ladyID to address that indicates the Owner
 mapping (address => uint256) ownershipTokenCount; // mapping from address to count -> how many ladies the address owns 
+
+mapping (uint256 => address) public ladyIndexToApproved;
+mapping (address => mapping (address => bool)) private _operatorApprovals;
 
 uint256 public gen0Counter;
 
@@ -101,6 +106,17 @@ function _createLady(
 
 }
 
+ function name() external view returns (string memory tokenName) {
+     return nombre;
+
+ }
+
+   
+function symbol() external view returns (string memory tokenSymbol) {
+    return simbolo;
+
+}
+
 function balanceOf(address owner) external view returns (uint256 balance){ 
     return ownershipTokenCount[owner];
 }
@@ -129,6 +145,7 @@ function _transfer(address _from, address _to, uint256 _tokenId) internal {
 
     if (_from != address(0)) {
         ownershipTokenCount[_from]--;
+        delete ladyIndexToApproved[_tokenId];
     }
 
     // Emit transfer event.
@@ -141,22 +158,35 @@ function _owns(address _claimant, uint256 _tokenId) internal view returns (bool)
 
 }
 
-/*
-function _name() external view returns (string memory tokenName) {
-    tokenName = name;
-    return
-};
+function approve(address _to, uint256 _tokenId) external {
+    require(_owns(msg.sender, _tokenId));
+
+    _approve(_tokenId, _to);
+    emit Approval(msg.sender, _to, _tokenId);
+}
+
+function _approve(uint256 _tokenId, address _approved) internal {
+    ladyIndexToApproved[_tokenId] = _approved;
+}
 
 
- function _symbol() external view returns (string memory tokenSymbol) {
+function setApprovalForAll(address _operator, bool _approved) external {
+    require(_operator != msg.sender);
 
- };
+    _operatorApprovals[msg.sender][operator] = approved;
+    emit ApprovalForAll(msg.sender, operator, approved);
 
+}
 
+function getApproved(uint256 _tokenId) external view returns (address) {
+    require(tokenId) < ladies.length; // token must exist
 
-*/
+    return ladyIndexToApproved[tokenId];
+}
 
+function isApprovedForAll(address _owner, address _operator) external view returns (bool) {
+    return _operatorApprovals[owner][_operator];
 
-
+}
 
 }

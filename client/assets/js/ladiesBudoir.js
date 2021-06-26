@@ -25,6 +25,7 @@ function flowerColor2(color, code, id) {
     $(`#ladyId${id} #dnaFlowerColor2`).html(code);   // This updates the flower part of the DNA that is displayed below the lady
 }
 
+// Eyes Vairations
 function eyeVariation(num, id) {
 
     $(`#ladyId${id} #dnaEyeShape`).html(num)
@@ -176,3 +177,6 @@ function dressType1(id) {
 function dressType2(id) {
     $(`#ladyId${id} .dress`).css({"top": "2px", "border-radius": "185% 115% 90% 0%"});
 }
+
+
+

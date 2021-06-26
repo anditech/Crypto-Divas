@@ -73,6 +73,7 @@ function randomLady() {
 function defaultLady() {
   renderLady(defaultDNA)
 }
+
 function renderLady(dna){
     headColor(colors[dna.headcolor],dna.headcolor)
     $('#bodycolor').val(dna.headcolor)
