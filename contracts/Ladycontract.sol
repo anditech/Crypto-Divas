@@ -12,7 +12,11 @@ contract Ladycontract is IERC721, Ownable  {
 
     bytes4 internal constant MAGIC_ERC721_RECEIVED = bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"));
 
-   
+    bytes4 private constant _INTERFACE_ID_ERC721 = 0x80ac58cd;
+
+    bytes4 private constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;
+
+
 
     event Birth(
         address owner, 
@@ -41,7 +45,19 @@ mapping (address => mapping (address => bool)) private _operatorApprovals;
 
 uint256 public gen0Counter;
 
+function supportInterface(bytes4 _interfaceId) external view returns (bool) {
+    return ( _interfaceId == _INTERFACE_ID_ERC721 || _interfaceId == _INTERFACE_ID_ERC165);
+}
 
+function safeTransferFrom(address _from, address _to, uint256 _tokenId) public {
+    safeTransferFrom(_from, _to, _tokenId, "");
+}
+
+function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes memory _data) public {
+    require( _isApprovedOrOwner(msg.sender, _from, _to, _tokenId) );
+
+    _safeTransfer(_from, _to, _tokenId, _data);
+}
 
 function _safeTransfer(address _from, address _to, uint256 _tokenId, bytes memory _data) internal {
     _transfer(_from, _to, _tokenId);
@@ -221,7 +237,7 @@ function _checkERC721Support(address _from, address _to, uint256 _tokenId, bytes
     else {
          // Call on ERC721Received in the _to contract
         bytes4 returnData = IERC721Receiver(_to).onERC721Received(msg.sender, _from, _tokenId, _data);
-        return returnData = MAGIC_ERC721_RECEIVED;
+        return returnData == MAGIC_ERC721_RECEIVED;
         // Check return value 
     }
    
@@ -233,6 +249,15 @@ function _isContract(address _to) view internal returns (bool) {
         size := extcodesize(_to)
     }
     return size > 0;
+}
+
+function _isApprovedOrOwner(address _spender, address _from, address _to, uint256 _tokenId) internal view returns (bool) {
+    require(_tokenId < ladies.length); // token must exist
+    require(_to != address(0)); //TO address is not 0
+    require(_owns(_from, _tokenId)); //FROM owns the token
+
+    // spender is from OR spender is approved for tokenId OR spender is operator for From
+    return (_spender ==_from || _approvedFor(_spender, _tokenId) || isApprovedForAll(_from, _spender));
 }
 
 }

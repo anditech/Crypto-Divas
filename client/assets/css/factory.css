@@ -83,12 +83,10 @@
   a.custom-card:hover {
   color: inherit;
   }
-  ul.myLadyDetails{
+  ul.myLadyDetails {
     list-style-type: none;
   }
 
-  ul.ladyInfos {
-    list-style-type: none;
-  }
+  
 
   
