@@ -19,11 +19,16 @@ $(document).ready(function(){
             let ladyDadId = event.returnValues.ladyDadId;
             let genes = event.returnValues.genes
             $("#ladyCreation").css("display", "block");
-            $("#ladyCreation").text("Bravo, you just created a Lady! Owner: " + owner 
-                                +" Little Lady Id: " + littleLadyId 
-                                +" Lady Mom Id: " + ladyMomId 
-                                +" Lady Dad Id: " + ladyDadId
-                                +" Genes: " + genes)
+            $("#ladyCreation").html(
+            `<p>"Bravo, you just created a Lady!</p>  
+             <ul class="ladyInfos" style="list-style-type: none;">
+                <li>Owner: ${owner}</li> 
+                <li>Little Lady Id:  ${littleLadyId}</li>
+                <li>Lady Mom Id: ${ladyMomId}</li>
+                <li>Lady Dad Id: ${ladyDadId}</li>
+                <li>Genes:  ${genes}</li>     
+            </ul>
+            `)
 
         }).on('error', console.error);
 

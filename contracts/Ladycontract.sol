@@ -10,6 +10,10 @@ contract Ladycontract is IERC721, Ownable  {
     string public constant nombre = "CryptoLadies";
     string public constant simbolo = "LADY";
 
+    bytes4 internal constant MAGIC_ERC721_RECEIVED = bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"));
+
+   
+
     event Birth(
         address owner, 
         uint256 littleLadyId, 
@@ -36,6 +40,13 @@ mapping (uint256 => address) public ladyIndexToApproved;
 mapping (address => mapping (address => bool)) private _operatorApprovals;
 
 uint256 public gen0Counter;
+
+
+
+function _safeTransfer(address _from, address _to, uint256 _tokenId, bytes memory _data) internal {
+    _transfer(_from, _to, _tokenId);
+    require( _checkERC721Support(_from, _to, _tokenId, _data) );
+}
 
 function getLady(uint256 _id) external view returns (
     uint256 birthTime,
@@ -173,20 +184,55 @@ function _approve(uint256 _tokenId, address _approved) internal {
 function setApprovalForAll(address _operator, bool _approved) external {
     require(_operator != msg.sender);
 
-    _operatorApprovals[msg.sender][operator] = approved;
-    emit ApprovalForAll(msg.sender, operator, approved);
+    _operatorApprovals[msg.sender][_operator] = _approved;
+    emit ApprovalForAll(msg.sender, _operator, _approved);
 
 }
 
-function getApproved(uint256 _tokenId) external view returns (address) {
-    require(tokenId) < ladies.length; // token must exist
+function getApproved(uint256 _tokenId) public view returns (address) {
+    require(_tokenId < ladies.length); // token must exist
 
-    return ladyIndexToApproved[tokenId];
+    return ladyIndexToApproved[_tokenId];
 }
 
-function isApprovedForAll(address _owner, address _operator) external view returns (bool) {
-    return _operatorApprovals[owner][_operator];
+function isApprovedForAll(address owner, address operator) public view returns (bool) {
+    return _operatorApprovals[owner][operator];
 
+}
+
+function transferFrom(address _from, address _to, uint256 _tokenId) external {
+    require(_to != address(0)); // cant send token to a 0 address
+    // require msg.sender is the owner or msg.sender is approved for the _tokenId or msg.sender is operator from _from
+    require(msg.sender == _from || _approvedFor(msg.sender, _tokenId) || isApprovedForAll(_from, msg.sender));
+    require(_owns(_from, _tokenId));
+    require(_tokenId < ladies.length);
+
+    _transfer(_from, _to, _tokenId);
+}
+
+function _approvedFor(address _claimant, uint256 _tokenId) internal view returns (bool) {
+    return ladyIndexToApproved[_tokenId] == _claimant;
+}
+
+function _checkERC721Support(address _from, address _to, uint256 _tokenId, bytes memory _data) internal returns (bool) {
+    if( !_isContract(_to) ) {
+        return true;
+    }
+    else {
+         // Call on ERC721Received in the _to contract
+        bytes4 returnData = IERC721Receiver(_to).onERC721Received(msg.sender, _from, _tokenId, _data);
+        return returnData = MAGIC_ERC721_RECEIVED;
+        // Check return value 
+    }
+   
+}
+
+function _isContract(address _to) view internal returns (bool) {
+    uint32 size;
+    assembly{
+        size := extcodesize(_to)
+    }
+    return size > 0;
 }
 
 }

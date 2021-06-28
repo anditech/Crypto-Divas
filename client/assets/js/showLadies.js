@@ -56,6 +56,7 @@ function ladyHtml(id){
                 <b>
 
                 <ul class="myLadyDetails">
+                    <li id="ladyNumber"></li>
                     <li id="ladyMomId"></li>
                     <li id="ladyDadId"></li>
                     <li id="generation"></li>
@@ -114,6 +115,7 @@ function ladyObj(myLadyData) {
 
 // Function showing details about each lady 
 function ladyDetails(myLadyData, id) {
+    $(`#ladyId${id} #ladyNumber`).html('My ID: ' + id);
     $(`#ladyId${id} #ladyMomId`).html('Lady Mom ID: ' + myLadyData.ladyMomId);
     $(`#ladyId${id} #ladyDadId`).html('Lady Dad ID: ' + myLadyData.ladyDadId);
     $(`#ladyId${id} #generation`).html('Generation: ' + myLadyData.generation);
@@ -166,7 +168,7 @@ function ladyBirth(timestamp) {
     let min = t.getMinutes();
     
     let dateOB = `${day} ${d} ${m} ${y}`;
-    let hrs = ` at ${h}` + ':' + `${min}`;
+    let hrs = ` at ${h} : ${min}`;
    // console.log(dateOB + hrs);
 
     return dateOB + hrs;
